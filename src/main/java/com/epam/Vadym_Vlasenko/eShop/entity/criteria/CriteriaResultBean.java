@@ -9,18 +9,18 @@ import java.util.List;
  */
 public class CriteriaResultBean {
 
-    private int amount;
+    private long amount;
     private List<Product> products;
 
     public CriteriaResultBean() {
     }
 
-    public CriteriaResultBean(int amount, List<Product> products) {
+    public CriteriaResultBean(long amount, List<Product> products) {
         this.amount = amount;
         this.products = products;
     }
 
-    public int getAmount() {
+    public long getAmount() {
         return amount;
     }
 

@@ -2,9 +2,9 @@ package com.epam.Vadym_Vlasenko.eShop.db.dao.mysql;
 
 import com.epam.Vadym_Vlasenko.eShop.db.DBConnectionHolder;
 import com.epam.Vadym_Vlasenko.eShop.db.dao.IOrderDAO;
-import com.epam.Vadym_Vlasenko.eShop.db.query_builder.QueryCreator;
+
 import com.epam.Vadym_Vlasenko.eShop.entity.Order;
-import com.epam.Vadym_Vlasenko.eShop.entity.StatusTypes;
+
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Repository;
 
@@ -57,30 +57,13 @@ public class OrderDAOMySQL implements IOrderDAO {
     @Override
     public List<Order> findAll() throws SQLException {
         List<Order> orders = new ArrayList<>();
-        QueryCreator creator = new QueryCreator();
-        String query = creator.selectAll(ORDERS_TABLE_NAME);
-        Connection connection = DBConnectionHolder.getConnectionHolder().getConnection();
-        try (Statement statement = connection.createStatement()) {
-            ResultSet resultSet = statement.executeQuery(query);
-            while (resultSet.next()) {
-                orders.add(extractOrder(resultSet));
-            }
-        }
+
         return orders;
     }
 
     @Override
     public List<Order> getOrdersByUser(int userId) throws SQLException {
         List<Order> orders = new ArrayList<>();
-        QueryCreator creator = new QueryCreator();
-        String query = creator.where(ORDERS_TABLE_NAME, USER_ID_COLUMN, String.valueOf(userId));
-        Connection connection = DBConnectionHolder.getConnectionHolder().getConnection();
-        try (Statement statement = connection.createStatement()) {
-            ResultSet resultSet = statement.executeQuery(query);
-            while (resultSet.next()) {
-                orders.add(extractOrder(resultSet));
-            }
-        }
         return orders;
     }
 
@@ -92,28 +75,6 @@ public class OrderDAOMySQL implements IOrderDAO {
     @Override
     public Order findById(int orderId) throws SQLException {
         Order order = new Order();
-        Connection connection = DBConnectionHolder.getConnectionHolder().getConnection();
-        QueryCreator creator = new QueryCreator();
-        String query = creator.where(ORDERS_TABLE_NAME, ORDER_ID_COLUMN, String.valueOf(orderId));
-        try (Statement statement = connection.createStatement()) {
-            ResultSet resultSet = statement.executeQuery(query);
-            if (resultSet.next()) {
-                order = extractOrder(resultSet);
-            }
-        }
-        return order;
-    }
-
-    public Order extractOrder(ResultSet resultSet) throws SQLException {
-        Order order = new Order();
-        order.setId(resultSet.getInt(ORDER_ID_COLUMN));
-        int orderStatusId = resultSet.getInt(STATUS_ID_COLUMN);
-        order.setOrderStatus(new OrderStatusDaoMySQL().findById(orderStatusId));
-        order.setOrderInfo(resultSet.getString(ORDER_INFO_COLUMN));
-        int userId = resultSet.getInt(USER_ID_COLUMN);
-        order.setUser(new UserDaoMySQL().findById(userId));
-        order.setDate(resultSet.getDate(DATE_COLUMN));
-        order.setTotalPrice(resultSet.getInt(TOTAL_PRICE));
         return order;
     }
 

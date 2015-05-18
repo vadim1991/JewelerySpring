@@ -27,11 +27,6 @@ public class DAOFactoryMySQL extends DAOFactory {
     }
 
     @Override
-    public IOrderStatusDAO getOrderStatusDAO() {
-        return new OrderStatusDaoMySQL();
-    }
-
-    @Override
     public IImageDao getImageDAO() {
         return new ImageDaoMySQL();
     }

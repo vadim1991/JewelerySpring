@@ -8,6 +8,7 @@ import com.epam.Vadym_Vlasenko.eShop.entity.criteria.CriteriaResultBean;
 import org.hibernate.Criteria;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Order;
+import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -47,29 +48,36 @@ public class ProductDaoMySQL extends GenericHibernateDaoImpl<Product> implements
     public CriteriaResultBean getProductsByCriteria(CriteriaFormBean criteriaFormBean) {
         Criteria criteria = getCriteriaFromBean(criteriaFormBean);
         List<Product> products = criteria.list();
-        return new CriteriaResultBean(0, products);
+        long amountProduct = (long) criteria.setProjection(Projections.rowCount()).uniqueResult();
+        System.out.println(amountProduct);
+        System.out.println(products);
+        return new CriteriaResultBean(amountProduct, products);
     }
 
     private Criteria getCriteriaFromBean(CriteriaFormBean criteriaFormBean) {
         String insertId = criteriaFormBean.getInsertId();
         String materialId = criteriaFormBean.getMaterialId();
         Criteria criteria = getCurrentSession().createCriteria(Product.class);
-//        if (criteriaFormBean.getIdCategory() != 0) {
-//            criteria.add(Restrictions.eq(CATEGORY_FIELD, criteriaFormBean.getIdCategory()));
-//        }
+        System.out.println(criteriaFormBean);
+        criteria.createAlias("category", "ct");
+        criteria.createAlias("material", "mt");
+        criteria.createAlias("insert", "ins");
+        if (criteriaFormBean.getIdCategory() != 0) {
+            criteria.add(Restrictions.eq("ct.id", criteriaFormBean.getIdCategory()));
+        }
         if (criteriaFormBean.getMaxPrice() != null || criteriaFormBean.getMinPrice() != null) {
             criteria.add(Restrictions.between(PRICE_FIELD, criteriaFormBean.getMinPrice(), criteriaFormBean.getMaxPrice()));
         }
-        if (criteriaFormBean.getMaxWeight() != null || criteriaFormBean.getMinPrice() != null) {
+        if (criteriaFormBean.getMaxWeight() != null || criteriaFormBean.getMinWeight() != null) {
             criteria.add(Restrictions.between(WEIGHT_FIELD, criteriaFormBean.getMinWeight(), criteriaFormBean.getMaxWeight()));
         }
         if (insertId != null) {
             if (!insertId.isEmpty())
-            criteria.add(Restrictions.eq(INSERT_FIELD, insertId));
+                criteria.add(Restrictions.eq("ins.id", insertId));
         }
         if (materialId != null) {
             if (!materialId.isEmpty())
-            criteria.add(Restrictions.eq(MATERIAL_FIELD, materialId));
+                criteria.add(Restrictions.eq("mt.id", materialId));
         }
         if (criteriaFormBean.getSortType() != null) {
             criteria.addOrder(chooseSortType(criteriaFormBean.getSortType()));

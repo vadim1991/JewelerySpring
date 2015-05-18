@@ -6,12 +6,12 @@ package com.epam.Vadym_Vlasenko.eShop.entity;
 public class CriteriaFormBean {
 
     private int idCategory;
-    private String minPrice;
-    private String maxPrice;
+    private Integer minPrice;
+    private Integer maxPrice;
     private int positionFrom;
     private int productOnPage;
-    private String minWeight;
-    private String maxWeight;
+    private Double minWeight;
+    private Double maxWeight;
     private String materialId;
     private String insertId;
     private String sortType;
@@ -24,19 +24,19 @@ public class CriteriaFormBean {
         this.idCategory = idCategory;
     }
 
-    public String getMinPrice() {
+    public Integer getMinPrice() {
         return minPrice;
     }
 
-    public void setMinPrice(String minPrice) {
+    public void setMinPrice(Integer minPrice) {
         this.minPrice = minPrice;
     }
 
-    public String getMaxPrice() {
+    public Integer getMaxPrice() {
         return maxPrice;
     }
 
-    public void setMaxPrice(String maxPrice) {
+    public void setMaxPrice(Integer maxPrice) {
         this.maxPrice = maxPrice;
     }
 
@@ -56,19 +56,19 @@ public class CriteriaFormBean {
         this.productOnPage = productOnPage;
     }
 
-    public String getMinWeight() {
+    public Double getMinWeight() {
         return minWeight;
     }
 
-    public void setMinWeight(String minWeight) {
+    public void setMinWeight(Double minWeight) {
         this.minWeight = minWeight;
     }
 
-    public String getMaxWeight() {
+    public Double getMaxWeight() {
         return maxWeight;
     }
 
-    public void setMaxWeight(String maxWeight) {
+    public void setMaxWeight(Double maxWeight) {
         this.maxWeight = maxWeight;
     }
 
@@ -94,5 +94,21 @@ public class CriteriaFormBean {
 
     public void setSortType(String sortType) {
         this.sortType = sortType;
+    }
+
+    @Override
+    public String toString() {
+        return "CriteriaFormBean{" +
+                "idCategory=" + idCategory +
+                ", minPrice='" + minPrice + '\'' +
+                ", maxPrice='" + maxPrice + '\'' +
+                ", positionFrom=" + positionFrom +
+                ", productOnPage=" + productOnPage +
+                ", minWeight='" + minWeight + '\'' +
+                ", maxWeight='" + maxWeight + '\'' +
+                ", materialId='" + materialId + '\'' +
+                ", insertId='" + insertId + '\'' +
+                ", sortType='" + sortType + '\'' +
+                '}';
     }
 }

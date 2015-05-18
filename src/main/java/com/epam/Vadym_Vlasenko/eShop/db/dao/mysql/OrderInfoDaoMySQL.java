@@ -2,7 +2,6 @@ package com.epam.Vadym_Vlasenko.eShop.db.dao.mysql;
 
 import com.epam.Vadym_Vlasenko.eShop.db.DBConnectionHolder;
 import com.epam.Vadym_Vlasenko.eShop.db.dao.IOrderInfoDAO;
-import com.epam.Vadym_Vlasenko.eShop.db.query_builder.QueryCreator;
 import com.epam.Vadym_Vlasenko.eShop.entity.OrderInfo;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Repository;
@@ -47,40 +46,15 @@ public class OrderInfoDaoMySQL implements IOrderInfoDAO {
     @Override
     public List<OrderInfo> findAll() throws SQLException {
         List<OrderInfo> orderInfoList = new ArrayList<>();
-        QueryCreator creator = new QueryCreator();
-        String query = creator.selectAll(TABLE_NAME);
-        Connection connection = DBConnectionHolder.getConnectionHolder().getConnection();
-        try (Statement statement = connection.createStatement()) {
-            ResultSet resultSet = statement.executeQuery(query);
-            while (resultSet.next()) {
-                orderInfoList.add(extractOrderInfo(resultSet));
-            }
-        }
+
         return orderInfoList;
     }
 
     @Override
     public List<OrderInfo> findById(int orderId) throws SQLException {
         List<OrderInfo> orderInfoList = new ArrayList<>();
-        QueryCreator creator = new QueryCreator();
-        String query = creator.where(TABLE_NAME, ORDER_ID_COLUMN, String.valueOf(orderId));
-        Connection connection = DBConnectionHolder.getConnectionHolder().getConnection();
-        try (Statement statement = connection.createStatement()) {
-            ResultSet resultSet = statement.executeQuery(query);
-            while (resultSet.next()) {
-                orderInfoList.add(extractOrderInfo(resultSet));
-            }
-        }
-        return orderInfoList;
-    }
 
-    private OrderInfo extractOrderInfo(ResultSet resultSet) throws SQLException {
-        OrderInfo orderInfo = new OrderInfo();
-        orderInfo.setId(resultSet.getInt(ID_COLUMN));
-        orderInfo.setProduct(new ProductDaoMySQL().findById(resultSet.getInt(PRODUCT_ID_COLUMN)));
-        orderInfo.setPrice(resultSet.getInt(PRICE_COLUMN));
-        orderInfo.setAmount(resultSet.getInt(AMOUNT_COLUMN));
-        return orderInfo;
+        return orderInfoList;
     }
 
 }

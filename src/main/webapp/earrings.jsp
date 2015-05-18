@@ -313,7 +313,7 @@
             container.append(product);
             container.show("slow");
         }
-        if (currentPage == 1) {
+        if (currentPage <= 1) {
             previous.attr("disabled", true)
         }
         else {
