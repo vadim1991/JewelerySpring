@@ -11,7 +11,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
-import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -48,8 +47,8 @@ public class RingsServlet extends HttpServlet {
     private WebApplicationContext context;
 
     @Override
-    public void init(ServletConfig config) throws ServletException {
-        context = WebApplicationContextUtils.getWebApplicationContext(config.getServletContext());
+    public void init() throws ServletException {
+        context = WebApplicationContextUtils.getWebApplicationContext(getServletContext());
         productService = (IProductService) context.getBean("productService");
         //productService = (ProductService) config.getServletContext().getAttribute(PRODUCT_SERVICE);
     }
@@ -71,7 +70,7 @@ public class RingsServlet extends HttpServlet {
         CriteriaResultBean criteriaResultBean = productService.getProductsByCriteria(criteria);
         List<Product> products = criteriaResultBean.getProducts();
         long countProduct = criteriaResultBean.getAmount();
-        int noOfPages = (int) Math.ceil(countProduct * 1.0 / records);
+        int noOfPages = (int) Math.ceil((int) countProduct * 1.0 / records);
         if (products == null) {
             req.getRequestDispatcher(Constants.BED_REQUEST_PAGE).forward(req, resp);
             return;
@@ -86,17 +85,13 @@ public class RingsServlet extends HttpServlet {
     private CriteriaFormBean getCriteria(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         CriteriaFormBean criteria = new CriteriaFormBean();
         criteria.setIdCategory(Constants.RINGS_CATEGORY);
+        criteria.setSortType(req.getParameter(SORT_TYPE_PARAMETER));
         criteria.setInsertId(req.getParameter(INSERT_PARAMETER));
         criteria.setMaterialId(req.getParameter(MATERIAL_PARAMETER));
-        criteria.setSortType(req.getParameter(SORT_TYPE_PARAMETER));
-        try {
-            criteria.setMaxPrice(Integer.parseInt(req.getParameter(MAX_PRICE_PARAMETER)));
-            criteria.setMinPrice(Integer.parseInt(req.getParameter(MIN_PRICE_PARAMETER)));
-            criteria.setMinWeight(Double.valueOf(req.getParameter(MIN_WEIGHT_PARAMETER)));
-            criteria.setMaxWeight(Double.valueOf(req.getParameter(MAX_WEIGHT_PARAMETER)));
-        } catch (NumberFormatException e) {
-            req.getRequestDispatcher(Constants.BED_REQUEST_PAGE).forward(req, resp);
-        }
+        criteria.setMaxPrice(req.getParameter(MAX_PRICE_PARAMETER));
+        criteria.setMinPrice(req.getParameter(MIN_PRICE_PARAMETER));
+        criteria.setMinWeight(req.getParameter(MIN_WEIGHT_PARAMETER));
+        criteria.setMaxWeight(req.getParameter(MAX_WEIGHT_PARAMETER));
         return criteria;
     }
 

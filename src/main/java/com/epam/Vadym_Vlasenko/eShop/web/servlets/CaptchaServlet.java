@@ -30,8 +30,8 @@ public class CaptchaServlet extends HttpServlet {
     private ICaptchaHandler captchaHandler;
 
     @Override
-    public void init(ServletConfig config) throws ServletException {
-        context = WebApplicationContextUtils.getWebApplicationContext(config.getServletContext());
+    public void init() throws ServletException {
+        context = WebApplicationContextUtils.getWebApplicationContext(getServletContext());
         captchaHandler = (ICaptchaHandler) context.getBean("captchaHandler");
         //captchaHandler = (ICaptchaHandler) context.getAttribute(Constants.CAPTCHA_HANDLER);
     }

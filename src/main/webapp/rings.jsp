@@ -300,6 +300,8 @@
         dataType: "json",
         success: function (data) {
             parseData(data, container)
+        }, error: function (message) {
+            alert("error " + message);
         }
     });
     $("#search").click(function () {

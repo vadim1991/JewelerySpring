@@ -47,10 +47,14 @@ public class ProductDaoMySQL extends GenericHibernateDaoImpl<Product> implements
     @Override
     public CriteriaResultBean getProductsByCriteria(CriteriaFormBean criteriaFormBean) {
         Criteria criteria = getCriteriaFromBean(criteriaFormBean);
+        System.out.println(criteria.toString());
         List<Product> products = criteria.list();
-        long amountProduct = (long) criteria.setProjection(Projections.rowCount()).uniqueResult();
+        Long amountProduct = (Long) criteria.setProjection(Projections.rowCount()).uniqueResult();
         System.out.println(amountProduct);
         System.out.println(products);
+        if (amountProduct == null) {
+            amountProduct = Long.valueOf(0);
+        }
         return new CriteriaResultBean(amountProduct, products);
     }
 
@@ -66,18 +70,22 @@ public class ProductDaoMySQL extends GenericHibernateDaoImpl<Product> implements
             criteria.add(Restrictions.eq("ct.id", criteriaFormBean.getIdCategory()));
         }
         if (criteriaFormBean.getMaxPrice() != null || criteriaFormBean.getMinPrice() != null) {
-            criteria.add(Restrictions.between(PRICE_FIELD, criteriaFormBean.getMinPrice(), criteriaFormBean.getMaxPrice()));
+            int minPrice = Integer.parseInt(criteriaFormBean.getMinPrice());
+            int maxPrice = Integer.parseInt(criteriaFormBean.getMaxPrice());
+            criteria.add(Restrictions.between(PRICE_FIELD, minPrice, maxPrice));
         }
         if (criteriaFormBean.getMaxWeight() != null || criteriaFormBean.getMinWeight() != null) {
-            criteria.add(Restrictions.between(WEIGHT_FIELD, criteriaFormBean.getMinWeight(), criteriaFormBean.getMaxWeight()));
+            double minWeight = Double.parseDouble(criteriaFormBean.getMinWeight());
+            double maxWeight = Double.parseDouble(criteriaFormBean.getMinWeight());
+            criteria.add(Restrictions.between(WEIGHT_FIELD, minWeight, maxWeight));
         }
         if (insertId != null) {
             if (!insertId.isEmpty())
-                criteria.add(Restrictions.eq("ins.id", insertId));
+                criteria.add(Restrictions.eq("ins.id", Integer.parseInt(insertId)));
         }
         if (materialId != null) {
             if (!materialId.isEmpty())
-                criteria.add(Restrictions.eq("mt.id", materialId));
+                criteria.add(Restrictions.eq("mt.id", Integer.parseInt(materialId)));
         }
         if (criteriaFormBean.getSortType() != null) {
             criteria.addOrder(chooseSortType(criteriaFormBean.getSortType()));

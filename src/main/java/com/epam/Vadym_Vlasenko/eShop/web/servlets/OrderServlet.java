@@ -39,8 +39,8 @@ public class OrderServlet extends HttpServlet {
     private WebApplicationContext context;
 
     @Override
-    public void init(ServletConfig config) throws ServletException {
-        context = WebApplicationContextUtils.getWebApplicationContext(config.getServletContext());
+    public void init() throws ServletException {
+        context = WebApplicationContextUtils.getWebApplicationContext(getServletContext());
         orderService = (IOrderService) context.getBean("orderService");
         //orderService = (IOrderService) context.getAttribute(Constants.ORDER_SERVICE);
     }

@@ -37,8 +37,8 @@ public class RegistrationServlet extends HttpServlet {
     private WebApplicationContext context;
 
     @Override
-    public void init(ServletConfig config) throws ServletException {
-        context = WebApplicationContextUtils.getWebApplicationContext(config.getServletContext());
+    public void init() throws ServletException {
+        context = WebApplicationContextUtils.getWebApplicationContext(getServletContext());
         userService = (IUserService) context.getBean("userService");
         captchaHandler = (ICaptchaHandler) context.getBean("captchaHandler");
         //userService = (UserService) context.getAttribute(Constants.USER_SERVICE);

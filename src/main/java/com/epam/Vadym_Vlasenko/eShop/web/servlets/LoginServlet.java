@@ -48,8 +48,8 @@ public class LoginServlet extends HttpServlet {
     private WebApplicationContext context;
 
     @Override
-    public void init(ServletConfig config) throws ServletException {
-        context = WebApplicationContextUtils.getWebApplicationContext(config.getServletContext());
+    public void init() throws ServletException {
+        context = WebApplicationContextUtils.getWebApplicationContext(getServletContext());
         userService = (UserService) context.getBean("userService");
         //userService = (UserService) context.getAttribute(Constants.USER_SERVICE);
     }

@@ -42,8 +42,8 @@ public class CartServlet extends HttpServlet {
     private WebApplicationContext context;
 
     @Override
-    public void init(ServletConfig config) throws ServletException {
-        context = WebApplicationContextUtils.getWebApplicationContext(config.getServletContext());
+    public void init() throws ServletException {
+        context = WebApplicationContextUtils.getWebApplicationContext(getServletContext());
         productService = (IProductService) context.getBean("productService");
         //productService = (IProductService) context.getAttribute(Constants.PRODUCT_SERVICE);
     }

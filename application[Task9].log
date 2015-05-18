@@ -911,3 +911,836 @@
 2015-05-18 16:57:24,342 [INFO ][tartStop-1][                         ContextLoader] - Root WebApplicationContext: initialization completed in 8714 ms
 2015-05-18 16:57:24,347 [INFO ][tartStop-1][        web.filters.LocalizationFilter] - Localization filter starts
 2015-05-18 16:57:24,347 [INFO ][tartStop-1][        web.filters.LocalizationFilter] - Localization filter finished
+2015-05-18 21:31:44,134 [INFO ][tartStop-1][                         ContextLoader] - Root WebApplicationContext: initialization started
+2015-05-18 21:31:44,609 [INFO ][tartStop-1][      support.XmlWebApplicationContext] - Refreshing Root WebApplicationContext: startup date [Mon May 18 21:31:44 EEST 2015]; root of context hierarchy
+2015-05-18 21:31:44,739 [INFO ][tartStop-1][           xml.XmlBeanDefinitionReader] - Loading XML bean definitions from ServletContext resource [/WEB-INF/applicationContext.xml]
+2015-05-18 21:31:45,857 [INFO ][tartStop-1][           xml.XmlBeanDefinitionReader] - Loading XML bean definitions from ServletContext resource [/WEB-INF/hibernate.xml]
+2015-05-18 21:31:46,807 [INFO ][tartStop-1][  config.PropertyPlaceholderConfigurer] - Loading properties file from ServletContext resource [/WEB-INF/db.properties]
+2015-05-18 21:31:46,873 [INFO ][tartStop-1][n.AutowiredAnnotationBeanPostProcessor] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-05-18 21:31:48,341 [INFO ][tartStop-1][                               Version] - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-05-18 21:31:48,402 [INFO ][tartStop-1][                 org.hibernate.Version] - HHH000412: Hibernate Core {4.3.6.Final}
+2015-05-18 21:31:48,421 [INFO ][tartStop-1][         org.hibernate.cfg.Environment] - HHH000206: hibernate.properties not found
+2015-05-18 21:31:48,440 [INFO ][tartStop-1][         org.hibernate.cfg.Environment] - HHH000021: Bytecode provider name : javassist
+2015-05-18 21:31:51,784 [INFO ][tartStop-1][         org.hibernate.dialect.Dialect] - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2015-05-18 21:31:52,607 [INFO ][tartStop-1][  internal.TransactionFactoryInitiator] - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-05-18 21:31:52,676 [INFO ][tartStop-1][         ast.ASTQueryTranslatorFactory] - HHH000397: Using ASTQueryTranslatorFactory
+2015-05-18 21:31:54,537 [INFO ][tartStop-1][                          SchemaUpdate] - HHH000228: Running hbm2ddl schema update
+2015-05-18 21:31:54,538 [INFO ][tartStop-1][                          SchemaUpdate] - HHH000102: Fetching database metadata
+2015-05-18 21:31:54,545 [INFO ][tartStop-1][                          SchemaUpdate] - HHH000396: Updating schema
+2015-05-18 21:31:54,713 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.category
+2015-05-18 21:31:54,714 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, title]
+2015-05-18 21:31:54,714 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 21:31:54,714 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 21:31:54,783 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.image
+2015-05-18 21:31:54,784 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, title, url]
+2015-05-18 21:31:54,784 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 21:31:54,784 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 21:31:54,860 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.inserts
+2015-05-18 21:31:54,861 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, title, name]
+2015-05-18 21:31:54,861 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 21:31:54,861 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 21:31:54,907 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.materials
+2015-05-18 21:31:54,907 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, name]
+2015-05-18 21:31:54,907 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 21:31:54,907 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 21:31:54,951 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.products
+2015-05-18 21:31:54,951 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, category, title, weight, price, description, insert_id, material, image_id, size]
+2015-05-18 21:31:54,951 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: [category_id, material_id, insert_id, image_id]
+2015-05-18 21:31:54,952 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary, category_id, material_id, insert_id, image_id]
+2015-05-18 21:31:54,983 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.roles
+2015-05-18 21:31:54,983 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, role]
+2015-05-18 21:31:54,984 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 21:31:54,984 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 21:31:55,069 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.users
+2015-05-18 21:31:55,069 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, lastlogindate, unblocktime, email, age, name, role, surname, login, password, image_id, loginfailamount]
+2015-05-18 21:31:55,069 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: [id_image, id_role]
+2015-05-18 21:31:55,069 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [id_image, id_role, primary]
+2015-05-18 21:31:55,071 [INFO ][tartStop-1][                          SchemaUpdate] - HHH000232: Schema update complete
+2015-05-18 21:31:55,617 [INFO ][tartStop-1][           HibernateTransactionManager] - Using DataSource [org.apache.commons.dbcp.BasicDataSource@b80312] of Hibernate SessionFactory for HibernateTransactionManager
+2015-05-18 21:31:55,687 [INFO ][tartStop-1][                         ContextLoader] - Root WebApplicationContext: initialization completed in 11505 ms
+2015-05-18 21:31:55,692 [INFO ][tartStop-1][        web.filters.LocalizationFilter] - Localization filter starts
+2015-05-18 21:31:55,693 [INFO ][tartStop-1][        web.filters.LocalizationFilter] - Localization filter finished
+2015-05-18 22:01:31,259 [INFO ][tartStop-1][                         ContextLoader] - Root WebApplicationContext: initialization started
+2015-05-18 22:01:31,542 [INFO ][tartStop-1][      support.XmlWebApplicationContext] - Refreshing Root WebApplicationContext: startup date [Mon May 18 22:01:31 EEST 2015]; root of context hierarchy
+2015-05-18 22:01:31,661 [INFO ][tartStop-1][           xml.XmlBeanDefinitionReader] - Loading XML bean definitions from ServletContext resource [/WEB-INF/applicationContext.xml]
+2015-05-18 22:01:32,429 [INFO ][tartStop-1][           xml.XmlBeanDefinitionReader] - Loading XML bean definitions from ServletContext resource [/WEB-INF/hibernate.xml]
+2015-05-18 22:01:33,193 [INFO ][tartStop-1][  config.PropertyPlaceholderConfigurer] - Loading properties file from ServletContext resource [/WEB-INF/db.properties]
+2015-05-18 22:01:33,252 [INFO ][tartStop-1][n.AutowiredAnnotationBeanPostProcessor] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-05-18 22:01:34,457 [INFO ][tartStop-1][                               Version] - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-05-18 22:01:34,496 [INFO ][tartStop-1][                 org.hibernate.Version] - HHH000412: Hibernate Core {4.3.6.Final}
+2015-05-18 22:01:34,516 [INFO ][tartStop-1][         org.hibernate.cfg.Environment] - HHH000206: hibernate.properties not found
+2015-05-18 22:01:34,535 [INFO ][tartStop-1][         org.hibernate.cfg.Environment] - HHH000021: Bytecode provider name : javassist
+2015-05-18 22:01:36,493 [INFO ][tartStop-1][         org.hibernate.dialect.Dialect] - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2015-05-18 22:01:37,109 [INFO ][tartStop-1][  internal.TransactionFactoryInitiator] - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-05-18 22:01:37,172 [INFO ][tartStop-1][         ast.ASTQueryTranslatorFactory] - HHH000397: Using ASTQueryTranslatorFactory
+2015-05-18 22:01:38,847 [INFO ][tartStop-1][                          SchemaUpdate] - HHH000228: Running hbm2ddl schema update
+2015-05-18 22:01:38,847 [INFO ][tartStop-1][                          SchemaUpdate] - HHH000102: Fetching database metadata
+2015-05-18 22:01:38,856 [INFO ][tartStop-1][                          SchemaUpdate] - HHH000396: Updating schema
+2015-05-18 22:01:39,046 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.category
+2015-05-18 22:01:39,046 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, title]
+2015-05-18 22:01:39,047 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 22:01:39,047 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 22:01:39,112 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.image
+2015-05-18 22:01:39,112 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, title, url]
+2015-05-18 22:01:39,113 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 22:01:39,113 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 22:01:39,158 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.inserts
+2015-05-18 22:01:39,159 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, title, name]
+2015-05-18 22:01:39,159 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 22:01:39,159 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 22:01:39,215 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.materials
+2015-05-18 22:01:39,216 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, name]
+2015-05-18 22:01:39,216 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 22:01:39,216 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 22:01:39,300 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.products
+2015-05-18 22:01:39,300 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, category, title, weight, price, description, insert_id, material, image_id, size]
+2015-05-18 22:01:39,300 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: [category_id, material_id, insert_id, image_id]
+2015-05-18 22:01:39,301 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary, category_id, material_id, insert_id, image_id]
+2015-05-18 22:01:39,351 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.roles
+2015-05-18 22:01:39,352 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, role]
+2015-05-18 22:01:39,352 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 22:01:39,352 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 22:01:39,427 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.users
+2015-05-18 22:01:39,428 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, lastlogindate, unblocktime, email, age, name, role, surname, login, password, image_id, loginfailamount]
+2015-05-18 22:01:39,428 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: [id_image, id_role]
+2015-05-18 22:01:39,428 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [id_image, id_role, primary]
+2015-05-18 22:01:39,430 [INFO ][tartStop-1][                          SchemaUpdate] - HHH000232: Schema update complete
+2015-05-18 22:01:39,881 [INFO ][tartStop-1][           HibernateTransactionManager] - Using DataSource [org.apache.commons.dbcp.BasicDataSource@1574dd9] of Hibernate SessionFactory for HibernateTransactionManager
+2015-05-18 22:01:39,924 [INFO ][tartStop-1][                         ContextLoader] - Root WebApplicationContext: initialization completed in 8641 ms
+2015-05-18 22:01:39,929 [INFO ][tartStop-1][        web.filters.LocalizationFilter] - Localization filter starts
+2015-05-18 22:01:39,930 [INFO ][tartStop-1][        web.filters.LocalizationFilter] - Localization filter finished
+2015-05-18 22:10:28,262 [INFO ][tartStop-1][                         ContextLoader] - Root WebApplicationContext: initialization started
+2015-05-18 22:10:28,515 [INFO ][tartStop-1][      support.XmlWebApplicationContext] - Refreshing Root WebApplicationContext: startup date [Mon May 18 22:10:28 EEST 2015]; root of context hierarchy
+2015-05-18 22:10:28,618 [INFO ][tartStop-1][           xml.XmlBeanDefinitionReader] - Loading XML bean definitions from ServletContext resource [/WEB-INF/applicationContext.xml]
+2015-05-18 22:10:29,388 [INFO ][tartStop-1][           xml.XmlBeanDefinitionReader] - Loading XML bean definitions from ServletContext resource [/WEB-INF/hibernate.xml]
+2015-05-18 22:10:30,062 [INFO ][tartStop-1][  config.PropertyPlaceholderConfigurer] - Loading properties file from ServletContext resource [/WEB-INF/db.properties]
+2015-05-18 22:10:30,116 [INFO ][tartStop-1][n.AutowiredAnnotationBeanPostProcessor] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-05-18 22:10:31,338 [INFO ][tartStop-1][                               Version] - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-05-18 22:10:31,389 [INFO ][tartStop-1][                 org.hibernate.Version] - HHH000412: Hibernate Core {4.3.6.Final}
+2015-05-18 22:10:31,409 [INFO ][tartStop-1][         org.hibernate.cfg.Environment] - HHH000206: hibernate.properties not found
+2015-05-18 22:10:31,428 [INFO ][tartStop-1][         org.hibernate.cfg.Environment] - HHH000021: Bytecode provider name : javassist
+2015-05-18 22:10:33,438 [INFO ][tartStop-1][         org.hibernate.dialect.Dialect] - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2015-05-18 22:10:34,113 [INFO ][tartStop-1][  internal.TransactionFactoryInitiator] - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-05-18 22:10:34,184 [INFO ][tartStop-1][         ast.ASTQueryTranslatorFactory] - HHH000397: Using ASTQueryTranslatorFactory
+2015-05-18 22:10:35,796 [INFO ][tartStop-1][                          SchemaUpdate] - HHH000228: Running hbm2ddl schema update
+2015-05-18 22:10:35,796 [INFO ][tartStop-1][                          SchemaUpdate] - HHH000102: Fetching database metadata
+2015-05-18 22:10:35,806 [INFO ][tartStop-1][                          SchemaUpdate] - HHH000396: Updating schema
+2015-05-18 22:10:35,916 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.category
+2015-05-18 22:10:35,917 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, title]
+2015-05-18 22:10:35,917 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 22:10:35,917 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 22:10:35,947 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.image
+2015-05-18 22:10:35,947 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, title, url]
+2015-05-18 22:10:35,947 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 22:10:35,947 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 22:10:35,987 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.inserts
+2015-05-18 22:10:35,987 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, title, name]
+2015-05-18 22:10:35,987 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 22:10:35,987 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 22:10:36,043 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.materials
+2015-05-18 22:10:36,043 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, name]
+2015-05-18 22:10:36,044 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 22:10:36,044 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 22:10:36,100 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.products
+2015-05-18 22:10:36,101 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, category, title, weight, price, description, insert_id, material, image_id, size]
+2015-05-18 22:10:36,101 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: [category_id, material_id, insert_id, image_id]
+2015-05-18 22:10:36,101 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary, category_id, material_id, insert_id, image_id]
+2015-05-18 22:10:36,130 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.roles
+2015-05-18 22:10:36,130 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, role]
+2015-05-18 22:10:36,130 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 22:10:36,130 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 22:10:36,171 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.users
+2015-05-18 22:10:36,171 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, lastlogindate, unblocktime, email, age, name, role, surname, login, password, image_id, loginfailamount]
+2015-05-18 22:10:36,171 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: [id_image, id_role]
+2015-05-18 22:10:36,171 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [id_image, id_role, primary]
+2015-05-18 22:10:36,173 [INFO ][tartStop-1][                          SchemaUpdate] - HHH000232: Schema update complete
+2015-05-18 22:10:36,549 [INFO ][tartStop-1][           HibernateTransactionManager] - Using DataSource [org.apache.commons.dbcp.BasicDataSource@1b23d2d] of Hibernate SessionFactory for HibernateTransactionManager
+2015-05-18 22:10:36,564 [INFO ][tartStop-1][                         ContextLoader] - Root WebApplicationContext: initialization completed in 8301 ms
+2015-05-18 22:10:36,569 [INFO ][tartStop-1][        web.filters.LocalizationFilter] - Localization filter starts
+2015-05-18 22:10:36,570 [INFO ][tartStop-1][        web.filters.LocalizationFilter] - Localization filter finished
+2015-05-18 22:12:27,040 [INFO ][tartStop-1][                         ContextLoader] - Root WebApplicationContext: initialization started
+2015-05-18 22:12:27,264 [INFO ][tartStop-1][      support.XmlWebApplicationContext] - Refreshing Root WebApplicationContext: startup date [Mon May 18 22:12:27 EEST 2015]; root of context hierarchy
+2015-05-18 22:12:27,371 [INFO ][tartStop-1][           xml.XmlBeanDefinitionReader] - Loading XML bean definitions from ServletContext resource [/WEB-INF/applicationContext.xml]
+2015-05-18 22:12:27,773 [INFO ][tartStop-1][           xml.XmlBeanDefinitionReader] - Loading XML bean definitions from ServletContext resource [/WEB-INF/hibernate.xml]
+2015-05-18 22:12:28,190 [INFO ][tartStop-1][  config.PropertyPlaceholderConfigurer] - Loading properties file from ServletContext resource [/WEB-INF/db.properties]
+2015-05-18 22:12:28,202 [INFO ][tartStop-1][n.AutowiredAnnotationBeanPostProcessor] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-05-18 22:12:29,107 [INFO ][tartStop-1][                               Version] - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-05-18 22:12:29,126 [INFO ][tartStop-1][                 org.hibernate.Version] - HHH000412: Hibernate Core {4.3.6.Final}
+2015-05-18 22:12:29,131 [INFO ][tartStop-1][         org.hibernate.cfg.Environment] - HHH000206: hibernate.properties not found
+2015-05-18 22:12:29,135 [INFO ][tartStop-1][         org.hibernate.cfg.Environment] - HHH000021: Bytecode provider name : javassist
+2015-05-18 22:12:30,030 [INFO ][tartStop-1][         org.hibernate.dialect.Dialect] - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2015-05-18 22:12:30,391 [INFO ][tartStop-1][  internal.TransactionFactoryInitiator] - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-05-18 22:12:30,403 [INFO ][tartStop-1][         ast.ASTQueryTranslatorFactory] - HHH000397: Using ASTQueryTranslatorFactory
+2015-05-18 22:12:31,245 [INFO ][tartStop-1][                          SchemaUpdate] - HHH000228: Running hbm2ddl schema update
+2015-05-18 22:12:31,246 [INFO ][tartStop-1][                          SchemaUpdate] - HHH000102: Fetching database metadata
+2015-05-18 22:12:31,253 [INFO ][tartStop-1][                          SchemaUpdate] - HHH000396: Updating schema
+2015-05-18 22:12:31,352 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.category
+2015-05-18 22:12:31,352 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, title]
+2015-05-18 22:12:31,352 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 22:12:31,352 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 22:12:31,368 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.image
+2015-05-18 22:12:31,368 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, title, url]
+2015-05-18 22:12:31,368 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 22:12:31,368 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 22:12:31,381 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.inserts
+2015-05-18 22:12:31,382 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, title, name]
+2015-05-18 22:12:31,382 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 22:12:31,382 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 22:12:31,395 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.materials
+2015-05-18 22:12:31,395 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, name]
+2015-05-18 22:12:31,395 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 22:12:31,395 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 22:12:31,416 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.products
+2015-05-18 22:12:31,416 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, category, title, weight, price, description, insert_id, material, image_id, size]
+2015-05-18 22:12:31,416 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: [category_id, material_id, insert_id, image_id]
+2015-05-18 22:12:31,416 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary, category_id, material_id, insert_id, image_id]
+2015-05-18 22:12:31,432 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.roles
+2015-05-18 22:12:31,432 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, role]
+2015-05-18 22:12:31,433 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 22:12:31,433 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 22:12:31,449 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.users
+2015-05-18 22:12:31,449 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, lastlogindate, unblocktime, email, age, name, role, surname, login, password, image_id, loginfailamount]
+2015-05-18 22:12:31,450 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: [id_image, id_role]
+2015-05-18 22:12:31,450 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [id_image, id_role, primary]
+2015-05-18 22:12:31,452 [INFO ][tartStop-1][                          SchemaUpdate] - HHH000232: Schema update complete
+2015-05-18 22:12:31,772 [INFO ][tartStop-1][           HibernateTransactionManager] - Using DataSource [org.apache.commons.dbcp.BasicDataSource@721094] of Hibernate SessionFactory for HibernateTransactionManager
+2015-05-18 22:12:31,804 [INFO ][tartStop-1][                         ContextLoader] - Root WebApplicationContext: initialization completed in 4763 ms
+2015-05-18 22:12:31,828 [INFO ][tartStop-1][        web.filters.LocalizationFilter] - Localization filter starts
+2015-05-18 22:12:31,829 [INFO ][tartStop-1][        web.filters.LocalizationFilter] - Localization filter finished
+2015-05-18 22:26:33,660 [INFO ][tartStop-1][                         ContextLoader] - Root WebApplicationContext: initialization started
+2015-05-18 22:26:33,932 [INFO ][tartStop-1][      support.XmlWebApplicationContext] - Refreshing Root WebApplicationContext: startup date [Mon May 18 22:26:33 EEST 2015]; root of context hierarchy
+2015-05-18 22:26:34,039 [INFO ][tartStop-1][           xml.XmlBeanDefinitionReader] - Loading XML bean definitions from ServletContext resource [/WEB-INF/applicationContext.xml]
+2015-05-18 22:26:34,765 [INFO ][tartStop-1][           xml.XmlBeanDefinitionReader] - Loading XML bean definitions from ServletContext resource [/WEB-INF/hibernate.xml]
+2015-05-18 22:26:35,430 [INFO ][tartStop-1][  config.PropertyPlaceholderConfigurer] - Loading properties file from ServletContext resource [/WEB-INF/db.properties]
+2015-05-18 22:26:35,493 [INFO ][tartStop-1][n.AutowiredAnnotationBeanPostProcessor] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-05-18 22:26:36,801 [INFO ][tartStop-1][                               Version] - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-05-18 22:26:36,855 [INFO ][tartStop-1][                 org.hibernate.Version] - HHH000412: Hibernate Core {4.3.6.Final}
+2015-05-18 22:26:36,874 [INFO ][tartStop-1][         org.hibernate.cfg.Environment] - HHH000206: hibernate.properties not found
+2015-05-18 22:26:36,893 [INFO ][tartStop-1][         org.hibernate.cfg.Environment] - HHH000021: Bytecode provider name : javassist
+2015-05-18 22:26:39,439 [INFO ][tartStop-1][         org.hibernate.dialect.Dialect] - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2015-05-18 22:26:41,785 [INFO ][tartStop-1][  internal.TransactionFactoryInitiator] - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-05-18 22:26:42,014 [INFO ][tartStop-1][         ast.ASTQueryTranslatorFactory] - HHH000397: Using ASTQueryTranslatorFactory
+2015-05-18 22:26:44,369 [INFO ][tartStop-1][                          SchemaUpdate] - HHH000228: Running hbm2ddl schema update
+2015-05-18 22:26:44,369 [INFO ][tartStop-1][                          SchemaUpdate] - HHH000102: Fetching database metadata
+2015-05-18 22:26:44,383 [INFO ][tartStop-1][                          SchemaUpdate] - HHH000396: Updating schema
+2015-05-18 22:26:44,470 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.category
+2015-05-18 22:26:44,470 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, title]
+2015-05-18 22:26:44,470 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 22:26:44,471 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 22:26:44,515 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.image
+2015-05-18 22:26:44,516 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, title, url]
+2015-05-18 22:26:44,516 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 22:26:44,516 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 22:26:44,556 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.inserts
+2015-05-18 22:26:44,556 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, title, name]
+2015-05-18 22:26:44,557 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 22:26:44,557 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 22:26:44,630 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.materials
+2015-05-18 22:26:44,630 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, name]
+2015-05-18 22:26:44,630 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 22:26:44,630 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 22:26:44,788 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.products
+2015-05-18 22:26:44,788 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, category, title, weight, price, description, insert_id, material, image_id, size]
+2015-05-18 22:26:44,788 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: [category_id, material_id, insert_id, image_id]
+2015-05-18 22:26:44,788 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary, category_id, material_id, insert_id, image_id]
+2015-05-18 22:26:44,832 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.roles
+2015-05-18 22:26:44,833 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, role]
+2015-05-18 22:26:44,833 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 22:26:44,833 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 22:26:44,915 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.users
+2015-05-18 22:26:44,916 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, lastlogindate, unblocktime, email, age, name, role, surname, login, password, image_id, loginfailamount]
+2015-05-18 22:26:44,916 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: [id_image, id_role]
+2015-05-18 22:26:44,916 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [id_image, id_role, primary]
+2015-05-18 22:26:44,917 [INFO ][tartStop-1][                          SchemaUpdate] - HHH000232: Schema update complete
+2015-05-18 22:26:45,377 [INFO ][tartStop-1][           HibernateTransactionManager] - Using DataSource [org.apache.commons.dbcp.BasicDataSource@141a9e] of Hibernate SessionFactory for HibernateTransactionManager
+2015-05-18 22:26:45,414 [INFO ][tartStop-1][                         ContextLoader] - Root WebApplicationContext: initialization completed in 11753 ms
+2015-05-18 22:26:45,420 [INFO ][tartStop-1][        web.filters.LocalizationFilter] - Localization filter starts
+2015-05-18 22:26:45,421 [INFO ][tartStop-1][        web.filters.LocalizationFilter] - Localization filter finished
+2015-05-18 22:28:28,383 [INFO ][tartStop-1][                         ContextLoader] - Root WebApplicationContext: initialization started
+2015-05-18 22:28:28,613 [INFO ][tartStop-1][      support.XmlWebApplicationContext] - Refreshing Root WebApplicationContext: startup date [Mon May 18 22:28:28 EEST 2015]; root of context hierarchy
+2015-05-18 22:28:28,698 [INFO ][tartStop-1][           xml.XmlBeanDefinitionReader] - Loading XML bean definitions from ServletContext resource [/WEB-INF/applicationContext.xml]
+2015-05-18 22:28:29,101 [INFO ][tartStop-1][           xml.XmlBeanDefinitionReader] - Loading XML bean definitions from ServletContext resource [/WEB-INF/hibernate.xml]
+2015-05-18 22:28:29,772 [INFO ][tartStop-1][  config.PropertyPlaceholderConfigurer] - Loading properties file from ServletContext resource [/WEB-INF/db.properties]
+2015-05-18 22:28:29,784 [INFO ][tartStop-1][n.AutowiredAnnotationBeanPostProcessor] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-05-18 22:28:30,478 [INFO ][tartStop-1][                               Version] - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-05-18 22:28:30,508 [INFO ][tartStop-1][                 org.hibernate.Version] - HHH000412: Hibernate Core {4.3.6.Final}
+2015-05-18 22:28:30,513 [INFO ][tartStop-1][         org.hibernate.cfg.Environment] - HHH000206: hibernate.properties not found
+2015-05-18 22:28:30,517 [INFO ][tartStop-1][         org.hibernate.cfg.Environment] - HHH000021: Bytecode provider name : javassist
+2015-05-18 22:28:31,686 [INFO ][tartStop-1][         org.hibernate.dialect.Dialect] - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2015-05-18 22:28:32,033 [INFO ][tartStop-1][  internal.TransactionFactoryInitiator] - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-05-18 22:28:32,045 [INFO ][tartStop-1][         ast.ASTQueryTranslatorFactory] - HHH000397: Using ASTQueryTranslatorFactory
+2015-05-18 22:28:32,762 [INFO ][tartStop-1][                          SchemaUpdate] - HHH000228: Running hbm2ddl schema update
+2015-05-18 22:28:32,763 [INFO ][tartStop-1][                          SchemaUpdate] - HHH000102: Fetching database metadata
+2015-05-18 22:28:32,772 [INFO ][tartStop-1][                          SchemaUpdate] - HHH000396: Updating schema
+2015-05-18 22:28:32,817 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.category
+2015-05-18 22:28:32,817 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, title]
+2015-05-18 22:28:32,817 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 22:28:32,817 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 22:28:32,877 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.image
+2015-05-18 22:28:32,878 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, title, url]
+2015-05-18 22:28:32,878 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 22:28:32,878 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 22:28:32,916 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.inserts
+2015-05-18 22:28:32,916 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, title, name]
+2015-05-18 22:28:32,916 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 22:28:32,916 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 22:28:32,935 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.materials
+2015-05-18 22:28:32,935 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, name]
+2015-05-18 22:28:32,935 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 22:28:32,936 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 22:28:32,968 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.products
+2015-05-18 22:28:32,969 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, category, title, weight, price, description, insert_id, material, image_id, size]
+2015-05-18 22:28:32,969 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: [category_id, material_id, insert_id, image_id]
+2015-05-18 22:28:32,969 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary, category_id, material_id, insert_id, image_id]
+2015-05-18 22:28:33,014 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.roles
+2015-05-18 22:28:33,014 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, role]
+2015-05-18 22:28:33,014 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 22:28:33,014 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 22:28:33,036 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.users
+2015-05-18 22:28:33,036 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, lastlogindate, unblocktime, email, age, name, role, surname, login, password, image_id, loginfailamount]
+2015-05-18 22:28:33,036 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: [id_image, id_role]
+2015-05-18 22:28:33,037 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [id_image, id_role, primary]
+2015-05-18 22:28:33,039 [INFO ][tartStop-1][                          SchemaUpdate] - HHH000232: Schema update complete
+2015-05-18 22:28:33,403 [INFO ][tartStop-1][           HibernateTransactionManager] - Using DataSource [org.apache.commons.dbcp.BasicDataSource@6e09ce] of Hibernate SessionFactory for HibernateTransactionManager
+2015-05-18 22:28:33,418 [INFO ][tartStop-1][                         ContextLoader] - Root WebApplicationContext: initialization completed in 5034 ms
+2015-05-18 22:28:33,423 [INFO ][tartStop-1][        web.filters.LocalizationFilter] - Localization filter starts
+2015-05-18 22:28:33,424 [INFO ][tartStop-1][        web.filters.LocalizationFilter] - Localization filter finished
+2015-05-18 22:30:31,263 [INFO ][tartStop-1][                         ContextLoader] - Root WebApplicationContext: initialization started
+2015-05-18 22:30:31,469 [INFO ][tartStop-1][      support.XmlWebApplicationContext] - Refreshing Root WebApplicationContext: startup date [Mon May 18 22:30:31 EEST 2015]; root of context hierarchy
+2015-05-18 22:30:31,562 [INFO ][tartStop-1][           xml.XmlBeanDefinitionReader] - Loading XML bean definitions from ServletContext resource [/WEB-INF/applicationContext.xml]
+2015-05-18 22:30:31,959 [INFO ][tartStop-1][           xml.XmlBeanDefinitionReader] - Loading XML bean definitions from ServletContext resource [/WEB-INF/hibernate.xml]
+2015-05-18 22:30:32,633 [INFO ][tartStop-1][  config.PropertyPlaceholderConfigurer] - Loading properties file from ServletContext resource [/WEB-INF/db.properties]
+2015-05-18 22:30:32,647 [INFO ][tartStop-1][n.AutowiredAnnotationBeanPostProcessor] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-05-18 22:30:33,384 [INFO ][tartStop-1][                               Version] - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-05-18 22:30:33,404 [INFO ][tartStop-1][                 org.hibernate.Version] - HHH000412: Hibernate Core {4.3.6.Final}
+2015-05-18 22:30:33,411 [INFO ][tartStop-1][         org.hibernate.cfg.Environment] - HHH000206: hibernate.properties not found
+2015-05-18 22:30:33,416 [INFO ][tartStop-1][         org.hibernate.cfg.Environment] - HHH000021: Bytecode provider name : javassist
+2015-05-18 22:30:34,679 [INFO ][tartStop-1][         org.hibernate.dialect.Dialect] - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2015-05-18 22:30:35,025 [INFO ][tartStop-1][  internal.TransactionFactoryInitiator] - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-05-18 22:30:35,039 [INFO ][tartStop-1][         ast.ASTQueryTranslatorFactory] - HHH000397: Using ASTQueryTranslatorFactory
+2015-05-18 22:30:35,696 [INFO ][tartStop-1][                          SchemaUpdate] - HHH000228: Running hbm2ddl schema update
+2015-05-18 22:30:35,697 [INFO ][tartStop-1][                          SchemaUpdate] - HHH000102: Fetching database metadata
+2015-05-18 22:30:35,705 [INFO ][tartStop-1][                          SchemaUpdate] - HHH000396: Updating schema
+2015-05-18 22:30:35,815 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.category
+2015-05-18 22:30:35,815 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, title]
+2015-05-18 22:30:35,816 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 22:30:35,816 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 22:30:35,851 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.image
+2015-05-18 22:30:35,852 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, title, url]
+2015-05-18 22:30:35,852 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 22:30:35,852 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 22:30:35,871 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.inserts
+2015-05-18 22:30:35,872 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, title, name]
+2015-05-18 22:30:35,872 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 22:30:35,872 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 22:30:35,885 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.materials
+2015-05-18 22:30:35,885 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, name]
+2015-05-18 22:30:35,886 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 22:30:35,886 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 22:30:35,907 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.products
+2015-05-18 22:30:35,908 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, category, title, weight, price, description, insert_id, material, image_id, size]
+2015-05-18 22:30:35,908 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: [category_id, material_id, insert_id, image_id]
+2015-05-18 22:30:35,908 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary, category_id, material_id, insert_id, image_id]
+2015-05-18 22:30:35,953 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.roles
+2015-05-18 22:30:35,953 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, role]
+2015-05-18 22:30:35,953 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 22:30:35,953 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 22:30:35,975 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.users
+2015-05-18 22:30:35,976 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, lastlogindate, unblocktime, email, age, name, role, surname, login, password, image_id, loginfailamount]
+2015-05-18 22:30:35,976 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: [id_image, id_role]
+2015-05-18 22:30:35,976 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [id_image, id_role, primary]
+2015-05-18 22:30:35,978 [INFO ][tartStop-1][                          SchemaUpdate] - HHH000232: Schema update complete
+2015-05-18 22:30:36,333 [INFO ][tartStop-1][           HibernateTransactionManager] - Using DataSource [org.apache.commons.dbcp.BasicDataSource@1331f7a] of Hibernate SessionFactory for HibernateTransactionManager
+2015-05-18 22:30:36,348 [INFO ][tartStop-1][                         ContextLoader] - Root WebApplicationContext: initialization completed in 5083 ms
+2015-05-18 22:30:36,353 [INFO ][tartStop-1][        web.filters.LocalizationFilter] - Localization filter starts
+2015-05-18 22:30:36,353 [INFO ][tartStop-1][        web.filters.LocalizationFilter] - Localization filter finished
+2015-05-18 22:36:34,407 [INFO ][tartStop-1][                         ContextLoader] - Root WebApplicationContext: initialization started
+2015-05-18 22:36:34,661 [INFO ][tartStop-1][      support.XmlWebApplicationContext] - Refreshing Root WebApplicationContext: startup date [Mon May 18 22:36:34 EEST 2015]; root of context hierarchy
+2015-05-18 22:36:34,746 [INFO ][tartStop-1][           xml.XmlBeanDefinitionReader] - Loading XML bean definitions from ServletContext resource [/WEB-INF/applicationContext.xml]
+2015-05-18 22:36:35,208 [INFO ][tartStop-1][           xml.XmlBeanDefinitionReader] - Loading XML bean definitions from ServletContext resource [/WEB-INF/hibernate.xml]
+2015-05-18 22:36:35,639 [INFO ][tartStop-1][  config.PropertyPlaceholderConfigurer] - Loading properties file from ServletContext resource [/WEB-INF/db.properties]
+2015-05-18 22:36:35,657 [INFO ][tartStop-1][n.AutowiredAnnotationBeanPostProcessor] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-05-18 22:36:36,621 [INFO ][tartStop-1][                               Version] - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-05-18 22:36:36,640 [INFO ][tartStop-1][                 org.hibernate.Version] - HHH000412: Hibernate Core {4.3.6.Final}
+2015-05-18 22:36:36,645 [INFO ][tartStop-1][         org.hibernate.cfg.Environment] - HHH000206: hibernate.properties not found
+2015-05-18 22:36:36,649 [INFO ][tartStop-1][         org.hibernate.cfg.Environment] - HHH000021: Bytecode provider name : javassist
+2015-05-18 22:36:37,547 [INFO ][tartStop-1][         org.hibernate.dialect.Dialect] - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2015-05-18 22:36:37,971 [INFO ][tartStop-1][  internal.TransactionFactoryInitiator] - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-05-18 22:36:37,984 [INFO ][tartStop-1][         ast.ASTQueryTranslatorFactory] - HHH000397: Using ASTQueryTranslatorFactory
+2015-05-18 22:36:38,885 [INFO ][tartStop-1][                          SchemaUpdate] - HHH000228: Running hbm2ddl schema update
+2015-05-18 22:36:38,885 [INFO ][tartStop-1][                          SchemaUpdate] - HHH000102: Fetching database metadata
+2015-05-18 22:36:38,894 [INFO ][tartStop-1][                          SchemaUpdate] - HHH000396: Updating schema
+2015-05-18 22:36:38,938 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.category
+2015-05-18 22:36:38,938 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, title]
+2015-05-18 22:36:38,938 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 22:36:38,938 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 22:36:38,953 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.image
+2015-05-18 22:36:38,954 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, title, url]
+2015-05-18 22:36:38,954 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 22:36:38,954 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 22:36:38,966 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.inserts
+2015-05-18 22:36:38,966 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, title, name]
+2015-05-18 22:36:38,967 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 22:36:38,967 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 22:36:38,984 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.materials
+2015-05-18 22:36:38,985 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, name]
+2015-05-18 22:36:38,985 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 22:36:38,985 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 22:36:39,005 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.products
+2015-05-18 22:36:39,005 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, category, title, weight, price, description, insert_id, material, image_id, size]
+2015-05-18 22:36:39,005 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: [category_id, material_id, insert_id, image_id]
+2015-05-18 22:36:39,005 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary, category_id, material_id, insert_id, image_id]
+2015-05-18 22:36:39,021 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.roles
+2015-05-18 22:36:39,021 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, role]
+2015-05-18 22:36:39,021 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 22:36:39,021 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 22:36:39,040 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.users
+2015-05-18 22:36:39,040 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, lastlogindate, unblocktime, email, age, name, role, surname, login, password, image_id, loginfailamount]
+2015-05-18 22:36:39,040 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: [id_image, id_role]
+2015-05-18 22:36:39,042 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [id_image, id_role, primary]
+2015-05-18 22:36:39,044 [INFO ][tartStop-1][                          SchemaUpdate] - HHH000232: Schema update complete
+2015-05-18 22:36:39,372 [INFO ][tartStop-1][           HibernateTransactionManager] - Using DataSource [org.apache.commons.dbcp.BasicDataSource@7e501c] of Hibernate SessionFactory for HibernateTransactionManager
+2015-05-18 22:36:39,407 [INFO ][tartStop-1][                         ContextLoader] - Root WebApplicationContext: initialization completed in 4998 ms
+2015-05-18 22:36:39,413 [INFO ][tartStop-1][        web.filters.LocalizationFilter] - Localization filter starts
+2015-05-18 22:36:39,413 [INFO ][tartStop-1][        web.filters.LocalizationFilter] - Localization filter finished
+2015-05-18 22:38:11,729 [INFO ][tartStop-1][                         ContextLoader] - Root WebApplicationContext: initialization started
+2015-05-18 22:38:12,197 [INFO ][tartStop-1][      support.XmlWebApplicationContext] - Refreshing Root WebApplicationContext: startup date [Mon May 18 22:38:12 EEST 2015]; root of context hierarchy
+2015-05-18 22:38:12,454 [INFO ][tartStop-1][           xml.XmlBeanDefinitionReader] - Loading XML bean definitions from ServletContext resource [/WEB-INF/applicationContext.xml]
+2015-05-18 22:38:13,401 [INFO ][tartStop-1][           xml.XmlBeanDefinitionReader] - Loading XML bean definitions from ServletContext resource [/WEB-INF/hibernate.xml]
+2015-05-18 22:38:14,038 [INFO ][tartStop-1][  config.PropertyPlaceholderConfigurer] - Loading properties file from ServletContext resource [/WEB-INF/db.properties]
+2015-05-18 22:38:14,052 [INFO ][tartStop-1][n.AutowiredAnnotationBeanPostProcessor] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-05-18 22:38:15,208 [INFO ][tartStop-1][                               Version] - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-05-18 22:38:15,225 [INFO ][tartStop-1][                 org.hibernate.Version] - HHH000412: Hibernate Core {4.3.6.Final}
+2015-05-18 22:38:15,230 [INFO ][tartStop-1][         org.hibernate.cfg.Environment] - HHH000206: hibernate.properties not found
+2015-05-18 22:38:15,233 [INFO ][tartStop-1][         org.hibernate.cfg.Environment] - HHH000021: Bytecode provider name : javassist
+2015-05-18 22:38:16,248 [INFO ][tartStop-1][         org.hibernate.dialect.Dialect] - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2015-05-18 22:38:16,639 [INFO ][tartStop-1][  internal.TransactionFactoryInitiator] - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-05-18 22:38:16,652 [INFO ][tartStop-1][         ast.ASTQueryTranslatorFactory] - HHH000397: Using ASTQueryTranslatorFactory
+2015-05-18 22:38:17,479 [INFO ][tartStop-1][                          SchemaUpdate] - HHH000228: Running hbm2ddl schema update
+2015-05-18 22:38:17,479 [INFO ][tartStop-1][                          SchemaUpdate] - HHH000102: Fetching database metadata
+2015-05-18 22:38:17,487 [INFO ][tartStop-1][                          SchemaUpdate] - HHH000396: Updating schema
+2015-05-18 22:38:17,529 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.category
+2015-05-18 22:38:17,530 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, title]
+2015-05-18 22:38:17,530 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 22:38:17,530 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 22:38:17,542 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.image
+2015-05-18 22:38:17,543 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, title, url]
+2015-05-18 22:38:17,543 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 22:38:17,543 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 22:38:17,560 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.inserts
+2015-05-18 22:38:17,560 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, title, name]
+2015-05-18 22:38:17,560 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 22:38:17,560 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 22:38:17,574 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.materials
+2015-05-18 22:38:17,575 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, name]
+2015-05-18 22:38:17,575 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 22:38:17,575 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 22:38:17,595 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.products
+2015-05-18 22:38:17,595 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, category, title, weight, price, description, insert_id, material, image_id, size]
+2015-05-18 22:38:17,595 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: [category_id, material_id, insert_id, image_id]
+2015-05-18 22:38:17,596 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary, category_id, material_id, insert_id, image_id]
+2015-05-18 22:38:17,608 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.roles
+2015-05-18 22:38:17,609 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, role]
+2015-05-18 22:38:17,609 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 22:38:17,609 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 22:38:17,625 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.users
+2015-05-18 22:38:17,625 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, lastlogindate, unblocktime, email, age, name, role, surname, login, password, image_id, loginfailamount]
+2015-05-18 22:38:17,625 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: [id_image, id_role]
+2015-05-18 22:38:17,625 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [id_image, id_role, primary]
+2015-05-18 22:38:17,627 [INFO ][tartStop-1][                          SchemaUpdate] - HHH000232: Schema update complete
+2015-05-18 22:38:17,985 [INFO ][tartStop-1][           HibernateTransactionManager] - Using DataSource [org.apache.commons.dbcp.BasicDataSource@1ed6fe3] of Hibernate SessionFactory for HibernateTransactionManager
+2015-05-18 22:38:18,000 [INFO ][tartStop-1][                         ContextLoader] - Root WebApplicationContext: initialization completed in 6268 ms
+2015-05-18 22:38:18,004 [INFO ][tartStop-1][        web.filters.LocalizationFilter] - Localization filter starts
+2015-05-18 22:38:18,005 [INFO ][tartStop-1][        web.filters.LocalizationFilter] - Localization filter finished
+2015-05-18 22:44:38,640 [INFO ][tartStop-1][                         ContextLoader] - Root WebApplicationContext: initialization started
+2015-05-18 22:44:38,856 [INFO ][tartStop-1][      support.XmlWebApplicationContext] - Refreshing Root WebApplicationContext: startup date [Mon May 18 22:44:38 EEST 2015]; root of context hierarchy
+2015-05-18 22:44:38,949 [INFO ][tartStop-1][           xml.XmlBeanDefinitionReader] - Loading XML bean definitions from ServletContext resource [/WEB-INF/applicationContext.xml]
+2015-05-18 22:44:39,369 [INFO ][tartStop-1][           xml.XmlBeanDefinitionReader] - Loading XML bean definitions from ServletContext resource [/WEB-INF/hibernate.xml]
+2015-05-18 22:44:40,053 [INFO ][tartStop-1][  config.PropertyPlaceholderConfigurer] - Loading properties file from ServletContext resource [/WEB-INF/db.properties]
+2015-05-18 22:44:40,065 [INFO ][tartStop-1][n.AutowiredAnnotationBeanPostProcessor] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-05-18 22:44:40,739 [INFO ][tartStop-1][                               Version] - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-05-18 22:44:40,756 [INFO ][tartStop-1][                 org.hibernate.Version] - HHH000412: Hibernate Core {4.3.6.Final}
+2015-05-18 22:44:40,761 [INFO ][tartStop-1][         org.hibernate.cfg.Environment] - HHH000206: hibernate.properties not found
+2015-05-18 22:44:40,765 [INFO ][tartStop-1][         org.hibernate.cfg.Environment] - HHH000021: Bytecode provider name : javassist
+2015-05-18 22:44:41,885 [INFO ][tartStop-1][         org.hibernate.dialect.Dialect] - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2015-05-18 22:44:42,235 [INFO ][tartStop-1][  internal.TransactionFactoryInitiator] - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-05-18 22:44:42,248 [INFO ][tartStop-1][         ast.ASTQueryTranslatorFactory] - HHH000397: Using ASTQueryTranslatorFactory
+2015-05-18 22:44:42,959 [INFO ][tartStop-1][                          SchemaUpdate] - HHH000228: Running hbm2ddl schema update
+2015-05-18 22:44:42,959 [INFO ][tartStop-1][                          SchemaUpdate] - HHH000102: Fetching database metadata
+2015-05-18 22:44:42,968 [INFO ][tartStop-1][                          SchemaUpdate] - HHH000396: Updating schema
+2015-05-18 22:44:43,011 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.category
+2015-05-18 22:44:43,012 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, title]
+2015-05-18 22:44:43,012 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 22:44:43,012 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 22:44:43,027 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.image
+2015-05-18 22:44:43,027 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, title, url]
+2015-05-18 22:44:43,027 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 22:44:43,027 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 22:44:43,041 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.inserts
+2015-05-18 22:44:43,042 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, title, name]
+2015-05-18 22:44:43,042 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 22:44:43,042 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 22:44:43,057 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.materials
+2015-05-18 22:44:43,057 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, name]
+2015-05-18 22:44:43,057 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 22:44:43,057 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 22:44:43,079 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.products
+2015-05-18 22:44:43,079 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, category, title, weight, price, description, insert_id, material, image_id, size]
+2015-05-18 22:44:43,079 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: [category_id, material_id, insert_id, image_id]
+2015-05-18 22:44:43,080 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary, category_id, material_id, insert_id, image_id]
+2015-05-18 22:44:43,094 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.roles
+2015-05-18 22:44:43,094 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, role]
+2015-05-18 22:44:43,094 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 22:44:43,094 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 22:44:43,111 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.users
+2015-05-18 22:44:43,112 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, lastlogindate, unblocktime, email, age, name, role, surname, login, password, image_id, loginfailamount]
+2015-05-18 22:44:43,112 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: [id_image, id_role]
+2015-05-18 22:44:43,112 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [id_image, id_role, primary]
+2015-05-18 22:44:43,113 [INFO ][tartStop-1][                          SchemaUpdate] - HHH000232: Schema update complete
+2015-05-18 22:44:43,535 [INFO ][tartStop-1][           HibernateTransactionManager] - Using DataSource [org.apache.commons.dbcp.BasicDataSource@8eadf2] of Hibernate SessionFactory for HibernateTransactionManager
+2015-05-18 22:44:43,556 [INFO ][tartStop-1][                         ContextLoader] - Root WebApplicationContext: initialization completed in 4914 ms
+2015-05-18 22:44:43,562 [INFO ][tartStop-1][        web.filters.LocalizationFilter] - Localization filter starts
+2015-05-18 22:44:43,562 [INFO ][tartStop-1][        web.filters.LocalizationFilter] - Localization filter finished
+2015-05-18 22:50:44,122 [INFO ][tartStop-1][                         ContextLoader] - Root WebApplicationContext: initialization started
+2015-05-18 22:50:44,395 [INFO ][tartStop-1][      support.XmlWebApplicationContext] - Refreshing Root WebApplicationContext: startup date [Mon May 18 22:50:44 EEST 2015]; root of context hierarchy
+2015-05-18 22:50:44,515 [INFO ][tartStop-1][           xml.XmlBeanDefinitionReader] - Loading XML bean definitions from ServletContext resource [/WEB-INF/applicationContext.xml]
+2015-05-18 22:50:45,197 [INFO ][tartStop-1][           xml.XmlBeanDefinitionReader] - Loading XML bean definitions from ServletContext resource [/WEB-INF/hibernate.xml]
+2015-05-18 22:50:45,647 [INFO ][tartStop-1][  config.PropertyPlaceholderConfigurer] - Loading properties file from ServletContext resource [/WEB-INF/db.properties]
+2015-05-18 22:50:45,700 [INFO ][tartStop-1][n.AutowiredAnnotationBeanPostProcessor] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-05-18 22:50:47,147 [INFO ][tartStop-1][                               Version] - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-05-18 22:50:47,186 [INFO ][tartStop-1][                 org.hibernate.Version] - HHH000412: Hibernate Core {4.3.6.Final}
+2015-05-18 22:50:47,207 [INFO ][tartStop-1][         org.hibernate.cfg.Environment] - HHH000206: hibernate.properties not found
+2015-05-18 22:50:47,225 [INFO ][tartStop-1][         org.hibernate.cfg.Environment] - HHH000021: Bytecode provider name : javassist
+2015-05-18 22:50:48,900 [INFO ][tartStop-1][         org.hibernate.dialect.Dialect] - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2015-05-18 22:50:49,598 [INFO ][tartStop-1][  internal.TransactionFactoryInitiator] - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-05-18 22:50:49,673 [INFO ][tartStop-1][         ast.ASTQueryTranslatorFactory] - HHH000397: Using ASTQueryTranslatorFactory
+2015-05-18 22:50:51,269 [INFO ][tartStop-1][                          SchemaUpdate] - HHH000228: Running hbm2ddl schema update
+2015-05-18 22:50:51,269 [INFO ][tartStop-1][                          SchemaUpdate] - HHH000102: Fetching database metadata
+2015-05-18 22:50:51,278 [INFO ][tartStop-1][                          SchemaUpdate] - HHH000396: Updating schema
+2015-05-18 22:50:51,364 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.category
+2015-05-18 22:50:51,364 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, title]
+2015-05-18 22:50:51,364 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 22:50:51,364 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 22:50:51,402 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.image
+2015-05-18 22:50:51,403 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, title, url]
+2015-05-18 22:50:51,403 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 22:50:51,403 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 22:50:51,439 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.inserts
+2015-05-18 22:50:51,439 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, title, name]
+2015-05-18 22:50:51,440 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 22:50:51,440 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 22:50:51,517 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.materials
+2015-05-18 22:50:51,517 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, name]
+2015-05-18 22:50:51,517 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 22:50:51,517 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 22:50:51,589 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.products
+2015-05-18 22:50:51,589 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, category, title, weight, price, description, insert_id, material, image_id, size]
+2015-05-18 22:50:51,590 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: [category_id, material_id, insert_id, image_id]
+2015-05-18 22:50:51,590 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary, category_id, material_id, insert_id, image_id]
+2015-05-18 22:50:51,625 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.roles
+2015-05-18 22:50:51,625 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, role]
+2015-05-18 22:50:51,625 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 22:50:51,625 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 22:50:51,651 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.users
+2015-05-18 22:50:51,652 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, lastlogindate, unblocktime, email, age, name, role, surname, login, password, image_id, loginfailamount]
+2015-05-18 22:50:51,652 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: [id_image, id_role]
+2015-05-18 22:50:51,652 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [id_image, id_role, primary]
+2015-05-18 22:50:51,653 [INFO ][tartStop-1][                          SchemaUpdate] - HHH000232: Schema update complete
+2015-05-18 22:50:52,013 [INFO ][tartStop-1][           HibernateTransactionManager] - Using DataSource [org.apache.commons.dbcp.BasicDataSource@2ba1f1] of Hibernate SessionFactory for HibernateTransactionManager
+2015-05-18 22:50:52,029 [INFO ][tartStop-1][                         ContextLoader] - Root WebApplicationContext: initialization completed in 7905 ms
+2015-05-18 22:50:52,034 [INFO ][tartStop-1][        web.filters.LocalizationFilter] - Localization filter starts
+2015-05-18 22:50:52,034 [INFO ][tartStop-1][        web.filters.LocalizationFilter] - Localization filter finished
+2015-05-18 22:52:57,166 [INFO ][tartStop-1][                         ContextLoader] - Root WebApplicationContext: initialization started
+2015-05-18 22:52:57,424 [INFO ][tartStop-1][      support.XmlWebApplicationContext] - Refreshing Root WebApplicationContext: startup date [Mon May 18 22:52:57 EEST 2015]; root of context hierarchy
+2015-05-18 22:52:57,538 [INFO ][tartStop-1][           xml.XmlBeanDefinitionReader] - Loading XML bean definitions from ServletContext resource [/WEB-INF/applicationContext.xml]
+2015-05-18 22:52:58,004 [INFO ][tartStop-1][           xml.XmlBeanDefinitionReader] - Loading XML bean definitions from ServletContext resource [/WEB-INF/hibernate.xml]
+2015-05-18 22:52:59,182 [INFO ][tartStop-1][  config.PropertyPlaceholderConfigurer] - Loading properties file from ServletContext resource [/WEB-INF/db.properties]
+2015-05-18 22:52:59,195 [INFO ][tartStop-1][n.AutowiredAnnotationBeanPostProcessor] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-05-18 22:52:59,921 [INFO ][tartStop-1][                               Version] - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-05-18 22:52:59,941 [INFO ][tartStop-1][                 org.hibernate.Version] - HHH000412: Hibernate Core {4.3.6.Final}
+2015-05-18 22:52:59,947 [INFO ][tartStop-1][         org.hibernate.cfg.Environment] - HHH000206: hibernate.properties not found
+2015-05-18 22:52:59,951 [INFO ][tartStop-1][         org.hibernate.cfg.Environment] - HHH000021: Bytecode provider name : javassist
+2015-05-18 22:53:01,250 [INFO ][tartStop-1][         org.hibernate.dialect.Dialect] - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2015-05-18 22:53:01,602 [INFO ][tartStop-1][  internal.TransactionFactoryInitiator] - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-05-18 22:53:01,616 [INFO ][tartStop-1][         ast.ASTQueryTranslatorFactory] - HHH000397: Using ASTQueryTranslatorFactory
+2015-05-18 22:53:02,299 [INFO ][tartStop-1][                          SchemaUpdate] - HHH000228: Running hbm2ddl schema update
+2015-05-18 22:53:02,300 [INFO ][tartStop-1][                          SchemaUpdate] - HHH000102: Fetching database metadata
+2015-05-18 22:53:02,308 [INFO ][tartStop-1][                          SchemaUpdate] - HHH000396: Updating schema
+2015-05-18 22:53:02,352 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.category
+2015-05-18 22:53:02,353 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, title]
+2015-05-18 22:53:02,353 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 22:53:02,353 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 22:53:02,367 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.image
+2015-05-18 22:53:02,367 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, title, url]
+2015-05-18 22:53:02,367 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 22:53:02,367 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 22:53:02,380 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.inserts
+2015-05-18 22:53:02,381 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, title, name]
+2015-05-18 22:53:02,381 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 22:53:02,381 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 22:53:02,395 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.materials
+2015-05-18 22:53:02,395 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, name]
+2015-05-18 22:53:02,395 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 22:53:02,395 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 22:53:02,420 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.products
+2015-05-18 22:53:02,420 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, category, title, weight, price, description, insert_id, material, image_id, size]
+2015-05-18 22:53:02,420 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: [category_id, material_id, insert_id, image_id]
+2015-05-18 22:53:02,420 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary, category_id, material_id, insert_id, image_id]
+2015-05-18 22:53:02,435 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.roles
+2015-05-18 22:53:02,435 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, role]
+2015-05-18 22:53:02,435 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 22:53:02,435 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 22:53:02,454 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.users
+2015-05-18 22:53:02,454 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, lastlogindate, unblocktime, email, age, name, role, surname, login, password, image_id, loginfailamount]
+2015-05-18 22:53:02,454 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: [id_image, id_role]
+2015-05-18 22:53:02,455 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [id_image, id_role, primary]
+2015-05-18 22:53:02,456 [INFO ][tartStop-1][                          SchemaUpdate] - HHH000232: Schema update complete
+2015-05-18 22:53:02,806 [INFO ][tartStop-1][           HibernateTransactionManager] - Using DataSource [org.apache.commons.dbcp.BasicDataSource@18ee6b8] of Hibernate SessionFactory for HibernateTransactionManager
+2015-05-18 22:53:02,821 [INFO ][tartStop-1][                         ContextLoader] - Root WebApplicationContext: initialization completed in 5655 ms
+2015-05-18 22:53:02,827 [INFO ][tartStop-1][        web.filters.LocalizationFilter] - Localization filter starts
+2015-05-18 22:53:02,827 [INFO ][tartStop-1][        web.filters.LocalizationFilter] - Localization filter finished
+2015-05-18 22:54:54,750 [INFO ][tartStop-1][                         ContextLoader] - Root WebApplicationContext: initialization started
+2015-05-18 22:54:54,950 [INFO ][tartStop-1][      support.XmlWebApplicationContext] - Refreshing Root WebApplicationContext: startup date [Mon May 18 22:54:54 EEST 2015]; root of context hierarchy
+2015-05-18 22:54:55,057 [INFO ][tartStop-1][           xml.XmlBeanDefinitionReader] - Loading XML bean definitions from ServletContext resource [/WEB-INF/applicationContext.xml]
+2015-05-18 22:54:55,481 [INFO ][tartStop-1][           xml.XmlBeanDefinitionReader] - Loading XML bean definitions from ServletContext resource [/WEB-INF/hibernate.xml]
+2015-05-18 22:54:56,148 [INFO ][tartStop-1][  config.PropertyPlaceholderConfigurer] - Loading properties file from ServletContext resource [/WEB-INF/db.properties]
+2015-05-18 22:54:56,161 [INFO ][tartStop-1][n.AutowiredAnnotationBeanPostProcessor] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-05-18 22:54:56,832 [INFO ][tartStop-1][                               Version] - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-05-18 22:54:56,849 [INFO ][tartStop-1][                 org.hibernate.Version] - HHH000412: Hibernate Core {4.3.6.Final}
+2015-05-18 22:54:56,855 [INFO ][tartStop-1][         org.hibernate.cfg.Environment] - HHH000206: hibernate.properties not found
+2015-05-18 22:54:56,858 [INFO ][tartStop-1][         org.hibernate.cfg.Environment] - HHH000021: Bytecode provider name : javassist
+2015-05-18 22:54:58,031 [INFO ][tartStop-1][         org.hibernate.dialect.Dialect] - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2015-05-18 22:54:58,409 [INFO ][tartStop-1][  internal.TransactionFactoryInitiator] - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-05-18 22:54:58,425 [INFO ][tartStop-1][         ast.ASTQueryTranslatorFactory] - HHH000397: Using ASTQueryTranslatorFactory
+2015-05-18 22:54:59,167 [INFO ][tartStop-1][                          SchemaUpdate] - HHH000228: Running hbm2ddl schema update
+2015-05-18 22:54:59,167 [INFO ][tartStop-1][                          SchemaUpdate] - HHH000102: Fetching database metadata
+2015-05-18 22:54:59,175 [INFO ][tartStop-1][                          SchemaUpdate] - HHH000396: Updating schema
+2015-05-18 22:54:59,219 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.category
+2015-05-18 22:54:59,219 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, title]
+2015-05-18 22:54:59,219 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 22:54:59,219 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 22:54:59,234 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.image
+2015-05-18 22:54:59,234 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, title, url]
+2015-05-18 22:54:59,234 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 22:54:59,234 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 22:54:59,248 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.inserts
+2015-05-18 22:54:59,248 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, title, name]
+2015-05-18 22:54:59,248 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 22:54:59,248 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 22:54:59,262 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.materials
+2015-05-18 22:54:59,262 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, name]
+2015-05-18 22:54:59,262 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 22:54:59,262 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 22:54:59,284 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.products
+2015-05-18 22:54:59,284 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, category, title, weight, price, description, insert_id, material, image_id, size]
+2015-05-18 22:54:59,284 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: [category_id, material_id, insert_id, image_id]
+2015-05-18 22:54:59,284 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary, category_id, material_id, insert_id, image_id]
+2015-05-18 22:54:59,296 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.roles
+2015-05-18 22:54:59,296 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, role]
+2015-05-18 22:54:59,296 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 22:54:59,297 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 22:54:59,313 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.users
+2015-05-18 22:54:59,313 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, lastlogindate, unblocktime, email, age, name, role, surname, login, password, image_id, loginfailamount]
+2015-05-18 22:54:59,314 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: [id_image, id_role]
+2015-05-18 22:54:59,314 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [id_image, id_role, primary]
+2015-05-18 22:54:59,315 [INFO ][tartStop-1][                          SchemaUpdate] - HHH000232: Schema update complete
+2015-05-18 22:54:59,705 [INFO ][tartStop-1][           HibernateTransactionManager] - Using DataSource [org.apache.commons.dbcp.BasicDataSource@13ed2d2] of Hibernate SessionFactory for HibernateTransactionManager
+2015-05-18 22:54:59,720 [INFO ][tartStop-1][                         ContextLoader] - Root WebApplicationContext: initialization completed in 4970 ms
+2015-05-18 22:54:59,725 [INFO ][tartStop-1][        web.filters.LocalizationFilter] - Localization filter starts
+2015-05-18 22:54:59,726 [INFO ][tartStop-1][        web.filters.LocalizationFilter] - Localization filter finished
+2015-05-18 22:56:09,137 [INFO ][tartStop-1][                         ContextLoader] - Root WebApplicationContext: initialization started
+2015-05-18 22:56:09,362 [INFO ][tartStop-1][      support.XmlWebApplicationContext] - Refreshing Root WebApplicationContext: startup date [Mon May 18 22:56:09 EEST 2015]; root of context hierarchy
+2015-05-18 22:56:09,453 [INFO ][tartStop-1][           xml.XmlBeanDefinitionReader] - Loading XML bean definitions from ServletContext resource [/WEB-INF/applicationContext.xml]
+2015-05-18 22:56:09,901 [INFO ][tartStop-1][           xml.XmlBeanDefinitionReader] - Loading XML bean definitions from ServletContext resource [/WEB-INF/hibernate.xml]
+2015-05-18 22:56:10,636 [INFO ][tartStop-1][  config.PropertyPlaceholderConfigurer] - Loading properties file from ServletContext resource [/WEB-INF/db.properties]
+2015-05-18 22:56:10,650 [INFO ][tartStop-1][n.AutowiredAnnotationBeanPostProcessor] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-05-18 22:56:11,360 [INFO ][tartStop-1][                               Version] - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-05-18 22:56:11,377 [INFO ][tartStop-1][                 org.hibernate.Version] - HHH000412: Hibernate Core {4.3.6.Final}
+2015-05-18 22:56:11,383 [INFO ][tartStop-1][         org.hibernate.cfg.Environment] - HHH000206: hibernate.properties not found
+2015-05-18 22:56:11,387 [INFO ][tartStop-1][         org.hibernate.cfg.Environment] - HHH000021: Bytecode provider name : javassist
+2015-05-18 22:56:12,587 [INFO ][tartStop-1][         org.hibernate.dialect.Dialect] - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2015-05-18 22:56:12,934 [INFO ][tartStop-1][  internal.TransactionFactoryInitiator] - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-05-18 22:56:12,947 [INFO ][tartStop-1][         ast.ASTQueryTranslatorFactory] - HHH000397: Using ASTQueryTranslatorFactory
+2015-05-18 22:56:13,625 [INFO ][tartStop-1][                          SchemaUpdate] - HHH000228: Running hbm2ddl schema update
+2015-05-18 22:56:13,625 [INFO ][tartStop-1][                          SchemaUpdate] - HHH000102: Fetching database metadata
+2015-05-18 22:56:13,633 [INFO ][tartStop-1][                          SchemaUpdate] - HHH000396: Updating schema
+2015-05-18 22:56:13,677 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.category
+2015-05-18 22:56:13,677 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, title]
+2015-05-18 22:56:13,677 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 22:56:13,677 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 22:56:13,691 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.image
+2015-05-18 22:56:13,691 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, title, url]
+2015-05-18 22:56:13,691 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 22:56:13,691 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 22:56:13,705 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.inserts
+2015-05-18 22:56:13,705 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, title, name]
+2015-05-18 22:56:13,705 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 22:56:13,706 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 22:56:13,719 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.materials
+2015-05-18 22:56:13,720 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, name]
+2015-05-18 22:56:13,720 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 22:56:13,720 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 22:56:13,742 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.products
+2015-05-18 22:56:13,743 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, category, title, weight, price, description, insert_id, material, image_id, size]
+2015-05-18 22:56:13,743 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: [category_id, material_id, insert_id, image_id]
+2015-05-18 22:56:13,743 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary, category_id, material_id, insert_id, image_id]
+2015-05-18 22:56:13,754 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.roles
+2015-05-18 22:56:13,755 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, role]
+2015-05-18 22:56:13,755 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 22:56:13,755 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 22:56:13,772 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.users
+2015-05-18 22:56:13,773 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, lastlogindate, unblocktime, email, age, name, role, surname, login, password, image_id, loginfailamount]
+2015-05-18 22:56:13,773 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: [id_image, id_role]
+2015-05-18 22:56:13,773 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [id_image, id_role, primary]
+2015-05-18 22:56:13,775 [INFO ][tartStop-1][                          SchemaUpdate] - HHH000232: Schema update complete
+2015-05-18 22:56:14,117 [INFO ][tartStop-1][           HibernateTransactionManager] - Using DataSource [org.apache.commons.dbcp.BasicDataSource@1a12bce] of Hibernate SessionFactory for HibernateTransactionManager
+2015-05-18 22:56:14,130 [INFO ][tartStop-1][                         ContextLoader] - Root WebApplicationContext: initialization completed in 4991 ms
+2015-05-18 22:56:14,136 [INFO ][tartStop-1][        web.filters.LocalizationFilter] - Localization filter starts
+2015-05-18 22:56:14,137 [INFO ][tartStop-1][        web.filters.LocalizationFilter] - Localization filter finished
+2015-05-18 22:57:04,146 [INFO ][tartStop-1][                         ContextLoader] - Root WebApplicationContext: initialization started
+2015-05-18 22:57:04,359 [INFO ][tartStop-1][      support.XmlWebApplicationContext] - Refreshing Root WebApplicationContext: startup date [Mon May 18 22:57:04 EEST 2015]; root of context hierarchy
+2015-05-18 22:57:04,458 [INFO ][tartStop-1][           xml.XmlBeanDefinitionReader] - Loading XML bean definitions from ServletContext resource [/WEB-INF/applicationContext.xml]
+2015-05-18 22:57:04,876 [INFO ][tartStop-1][           xml.XmlBeanDefinitionReader] - Loading XML bean definitions from ServletContext resource [/WEB-INF/hibernate.xml]
+2015-05-18 22:57:05,560 [INFO ][tartStop-1][  config.PropertyPlaceholderConfigurer] - Loading properties file from ServletContext resource [/WEB-INF/db.properties]
+2015-05-18 22:57:05,572 [INFO ][tartStop-1][n.AutowiredAnnotationBeanPostProcessor] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-05-18 22:57:06,254 [INFO ][tartStop-1][                               Version] - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-05-18 22:57:06,273 [INFO ][tartStop-1][                 org.hibernate.Version] - HHH000412: Hibernate Core {4.3.6.Final}
+2015-05-18 22:57:06,278 [INFO ][tartStop-1][         org.hibernate.cfg.Environment] - HHH000206: hibernate.properties not found
+2015-05-18 22:57:06,282 [INFO ][tartStop-1][         org.hibernate.cfg.Environment] - HHH000021: Bytecode provider name : javassist
+2015-05-18 22:57:07,416 [INFO ][tartStop-1][         org.hibernate.dialect.Dialect] - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2015-05-18 22:57:07,807 [INFO ][tartStop-1][  internal.TransactionFactoryInitiator] - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-05-18 22:57:07,819 [INFO ][tartStop-1][         ast.ASTQueryTranslatorFactory] - HHH000397: Using ASTQueryTranslatorFactory
+2015-05-18 22:57:08,502 [INFO ][tartStop-1][                          SchemaUpdate] - HHH000228: Running hbm2ddl schema update
+2015-05-18 22:57:08,502 [INFO ][tartStop-1][                          SchemaUpdate] - HHH000102: Fetching database metadata
+2015-05-18 22:57:08,510 [INFO ][tartStop-1][                          SchemaUpdate] - HHH000396: Updating schema
+2015-05-18 22:57:08,568 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.category
+2015-05-18 22:57:08,568 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, title]
+2015-05-18 22:57:08,569 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 22:57:08,569 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 22:57:08,587 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.image
+2015-05-18 22:57:08,587 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, title, url]
+2015-05-18 22:57:08,587 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 22:57:08,587 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 22:57:08,607 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.inserts
+2015-05-18 22:57:08,607 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, title, name]
+2015-05-18 22:57:08,607 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 22:57:08,607 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 22:57:08,624 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.materials
+2015-05-18 22:57:08,624 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, name]
+2015-05-18 22:57:08,624 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 22:57:08,624 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 22:57:08,645 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.products
+2015-05-18 22:57:08,645 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, category, title, weight, price, description, insert_id, material, image_id, size]
+2015-05-18 22:57:08,645 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: [category_id, material_id, insert_id, image_id]
+2015-05-18 22:57:08,646 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary, category_id, material_id, insert_id, image_id]
+2015-05-18 22:57:08,658 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.roles
+2015-05-18 22:57:08,658 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, role]
+2015-05-18 22:57:08,658 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 22:57:08,659 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 22:57:08,674 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.users
+2015-05-18 22:57:08,674 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, lastlogindate, unblocktime, email, age, name, role, surname, login, password, image_id, loginfailamount]
+2015-05-18 22:57:08,674 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: [id_image, id_role]
+2015-05-18 22:57:08,674 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [id_image, id_role, primary]
+2015-05-18 22:57:08,676 [INFO ][tartStop-1][                          SchemaUpdate] - HHH000232: Schema update complete
+2015-05-18 22:57:09,025 [INFO ][tartStop-1][           HibernateTransactionManager] - Using DataSource [org.apache.commons.dbcp.BasicDataSource@1355460] of Hibernate SessionFactory for HibernateTransactionManager
+2015-05-18 22:57:09,040 [INFO ][tartStop-1][                         ContextLoader] - Root WebApplicationContext: initialization completed in 4892 ms
+2015-05-18 22:57:09,044 [INFO ][tartStop-1][        web.filters.LocalizationFilter] - Localization filter starts
+2015-05-18 22:57:09,044 [INFO ][tartStop-1][        web.filters.LocalizationFilter] - Localization filter finished
+2015-05-18 23:01:21,446 [INFO ][tartStop-1][                         ContextLoader] - Root WebApplicationContext: initialization started
+2015-05-18 23:01:21,686 [INFO ][tartStop-1][      support.XmlWebApplicationContext] - Refreshing Root WebApplicationContext: startup date [Mon May 18 23:01:21 EEST 2015]; root of context hierarchy
+2015-05-18 23:01:21,775 [INFO ][tartStop-1][           xml.XmlBeanDefinitionReader] - Loading XML bean definitions from ServletContext resource [/WEB-INF/applicationContext.xml]
+2015-05-18 23:01:22,166 [INFO ][tartStop-1][           xml.XmlBeanDefinitionReader] - Loading XML bean definitions from ServletContext resource [/WEB-INF/hibernate.xml]
+2015-05-18 23:01:22,844 [INFO ][tartStop-1][  config.PropertyPlaceholderConfigurer] - Loading properties file from ServletContext resource [/WEB-INF/db.properties]
+2015-05-18 23:01:22,856 [INFO ][tartStop-1][n.AutowiredAnnotationBeanPostProcessor] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-05-18 23:01:23,517 [INFO ][tartStop-1][                               Version] - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-05-18 23:01:23,536 [INFO ][tartStop-1][                 org.hibernate.Version] - HHH000412: Hibernate Core {4.3.6.Final}
+2015-05-18 23:01:23,541 [INFO ][tartStop-1][         org.hibernate.cfg.Environment] - HHH000206: hibernate.properties not found
+2015-05-18 23:01:23,544 [INFO ][tartStop-1][         org.hibernate.cfg.Environment] - HHH000021: Bytecode provider name : javassist
+2015-05-18 23:01:24,666 [INFO ][tartStop-1][         org.hibernate.dialect.Dialect] - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2015-05-18 23:01:25,007 [INFO ][tartStop-1][  internal.TransactionFactoryInitiator] - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-05-18 23:01:25,020 [INFO ][tartStop-1][         ast.ASTQueryTranslatorFactory] - HHH000397: Using ASTQueryTranslatorFactory
+2015-05-18 23:01:25,678 [INFO ][tartStop-1][                          SchemaUpdate] - HHH000228: Running hbm2ddl schema update
+2015-05-18 23:01:25,679 [INFO ][tartStop-1][                          SchemaUpdate] - HHH000102: Fetching database metadata
+2015-05-18 23:01:25,687 [INFO ][tartStop-1][                          SchemaUpdate] - HHH000396: Updating schema
+2015-05-18 23:01:25,819 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.category
+2015-05-18 23:01:25,819 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, title]
+2015-05-18 23:01:25,819 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 23:01:25,820 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 23:01:25,835 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.image
+2015-05-18 23:01:25,835 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, title, url]
+2015-05-18 23:01:25,835 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 23:01:25,835 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 23:01:25,852 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.inserts
+2015-05-18 23:01:25,852 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, title, name]
+2015-05-18 23:01:25,852 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 23:01:25,852 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 23:01:25,866 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.materials
+2015-05-18 23:01:25,866 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, name]
+2015-05-18 23:01:25,866 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 23:01:25,866 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 23:01:25,886 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.products
+2015-05-18 23:01:25,887 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, category, title, weight, price, description, insert_id, material, image_id, size]
+2015-05-18 23:01:25,887 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: [category_id, material_id, insert_id, image_id]
+2015-05-18 23:01:25,887 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary, category_id, material_id, insert_id, image_id]
+2015-05-18 23:01:25,912 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.roles
+2015-05-18 23:01:25,912 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, role]
+2015-05-18 23:01:25,912 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 23:01:25,913 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 23:01:25,931 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.users
+2015-05-18 23:01:25,931 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, lastlogindate, unblocktime, email, age, name, role, surname, login, password, image_id, loginfailamount]
+2015-05-18 23:01:25,932 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: [id_image, id_role]
+2015-05-18 23:01:25,932 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [id_image, id_role, primary]
+2015-05-18 23:01:25,933 [INFO ][tartStop-1][                          SchemaUpdate] - HHH000232: Schema update complete
+2015-05-18 23:01:26,285 [INFO ][tartStop-1][           HibernateTransactionManager] - Using DataSource [org.apache.commons.dbcp.BasicDataSource@184ebc5] of Hibernate SessionFactory for HibernateTransactionManager
+2015-05-18 23:01:26,298 [INFO ][tartStop-1][                         ContextLoader] - Root WebApplicationContext: initialization completed in 4850 ms
+2015-05-18 23:01:26,304 [INFO ][tartStop-1][        web.filters.LocalizationFilter] - Localization filter starts
+2015-05-18 23:01:26,304 [INFO ][tartStop-1][        web.filters.LocalizationFilter] - Localization filter finished
+2015-05-18 23:03:38,483 [INFO ][tartStop-1][                         ContextLoader] - Root WebApplicationContext: initialization started
+2015-05-18 23:03:38,717 [INFO ][tartStop-1][      support.XmlWebApplicationContext] - Refreshing Root WebApplicationContext: startup date [Mon May 18 23:03:38 EEST 2015]; root of context hierarchy
+2015-05-18 23:03:38,806 [INFO ][tartStop-1][           xml.XmlBeanDefinitionReader] - Loading XML bean definitions from ServletContext resource [/WEB-INF/applicationContext.xml]
+2015-05-18 23:03:39,248 [INFO ][tartStop-1][           xml.XmlBeanDefinitionReader] - Loading XML bean definitions from ServletContext resource [/WEB-INF/hibernate.xml]
+2015-05-18 23:03:39,966 [INFO ][tartStop-1][  config.PropertyPlaceholderConfigurer] - Loading properties file from ServletContext resource [/WEB-INF/db.properties]
+2015-05-18 23:03:39,978 [INFO ][tartStop-1][n.AutowiredAnnotationBeanPostProcessor] - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2015-05-18 23:03:40,695 [INFO ][tartStop-1][                               Version] - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-05-18 23:03:40,714 [INFO ][tartStop-1][                 org.hibernate.Version] - HHH000412: Hibernate Core {4.3.6.Final}
+2015-05-18 23:03:40,719 [INFO ][tartStop-1][         org.hibernate.cfg.Environment] - HHH000206: hibernate.properties not found
+2015-05-18 23:03:40,723 [INFO ][tartStop-1][         org.hibernate.cfg.Environment] - HHH000021: Bytecode provider name : javassist
+2015-05-18 23:03:41,813 [INFO ][tartStop-1][         org.hibernate.dialect.Dialect] - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2015-05-18 23:03:42,163 [INFO ][tartStop-1][  internal.TransactionFactoryInitiator] - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-05-18 23:03:42,175 [INFO ][tartStop-1][         ast.ASTQueryTranslatorFactory] - HHH000397: Using ASTQueryTranslatorFactory
+2015-05-18 23:03:42,852 [INFO ][tartStop-1][                          SchemaUpdate] - HHH000228: Running hbm2ddl schema update
+2015-05-18 23:03:42,853 [INFO ][tartStop-1][                          SchemaUpdate] - HHH000102: Fetching database metadata
+2015-05-18 23:03:42,862 [INFO ][tartStop-1][                          SchemaUpdate] - HHH000396: Updating schema
+2015-05-18 23:03:42,905 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.category
+2015-05-18 23:03:42,906 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, title]
+2015-05-18 23:03:42,906 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 23:03:42,906 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 23:03:42,922 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.image
+2015-05-18 23:03:42,923 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, title, url]
+2015-05-18 23:03:42,923 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 23:03:42,923 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 23:03:42,939 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.inserts
+2015-05-18 23:03:42,939 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, title, name]
+2015-05-18 23:03:42,939 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 23:03:42,939 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 23:03:42,955 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.materials
+2015-05-18 23:03:42,956 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, name]
+2015-05-18 23:03:42,956 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 23:03:42,956 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 23:03:42,987 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.products
+2015-05-18 23:03:42,987 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, category, title, weight, price, description, insert_id, material, image_id, size]
+2015-05-18 23:03:42,988 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: [category_id, material_id, insert_id, image_id]
+2015-05-18 23:03:42,988 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary, category_id, material_id, insert_id, image_id]
+2015-05-18 23:03:43,004 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.roles
+2015-05-18 23:03:43,004 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, role]
+2015-05-18 23:03:43,005 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: []
+2015-05-18 23:03:43,005 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [primary]
+2015-05-18 23:03:43,022 [INFO ][tartStop-1][                         TableMetadata] - HHH000261: Table found: eshop.users
+2015-05-18 23:03:43,022 [INFO ][tartStop-1][                         TableMetadata] - HHH000037: Columns: [id, lastlogindate, unblocktime, email, age, name, role, surname, login, password, image_id, loginfailamount]
+2015-05-18 23:03:43,022 [INFO ][tartStop-1][                         TableMetadata] - HHH000108: Foreign keys: [id_image, id_role]
+2015-05-18 23:03:43,022 [INFO ][tartStop-1][                         TableMetadata] - HHH000126: Indexes: [id_image, id_role, primary]
+2015-05-18 23:03:43,024 [INFO ][tartStop-1][                          SchemaUpdate] - HHH000232: Schema update complete
+2015-05-18 23:03:43,349 [INFO ][tartStop-1][           HibernateTransactionManager] - Using DataSource [org.apache.commons.dbcp.BasicDataSource@10e523d] of Hibernate SessionFactory for HibernateTransactionManager
+2015-05-18 23:03:43,364 [INFO ][tartStop-1][                         ContextLoader] - Root WebApplicationContext: initialization completed in 4879 ms
+2015-05-18 23:03:43,369 [INFO ][tartStop-1][        web.filters.LocalizationFilter] - Localization filter starts
+2015-05-18 23:03:43,370 [INFO ][tartStop-1][        web.filters.LocalizationFilter] - Localization filter finished

@@ -29,8 +29,8 @@ public class ProductServlet extends HttpServlet {
     private WebApplicationContext context;
 
     @Override
-    public void init(ServletConfig config) throws ServletException {
-        context = WebApplicationContextUtils.getWebApplicationContext(config.getServletContext());
+    public void init() throws ServletException {
+        context = WebApplicationContextUtils.getWebApplicationContext(getServletContext());
         service = (IProductService) context.getBean("productService");
         criteria = new CriteriaFormBean();
         criteria.setProductOnPage(PRODUCT_ON_PAGE);

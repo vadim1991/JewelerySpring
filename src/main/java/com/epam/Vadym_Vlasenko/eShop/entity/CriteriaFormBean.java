@@ -6,12 +6,12 @@ package com.epam.Vadym_Vlasenko.eShop.entity;
 public class CriteriaFormBean {
 
     private int idCategory;
-    private Integer minPrice;
-    private Integer maxPrice;
+    private String minPrice;
+    private String maxPrice;
     private int positionFrom;
     private int productOnPage;
-    private Double minWeight;
-    private Double maxWeight;
+    private String minWeight;
+    private String maxWeight;
     private String materialId;
     private String insertId;
     private String sortType;
@@ -24,19 +24,19 @@ public class CriteriaFormBean {
         this.idCategory = idCategory;
     }
 
-    public Integer getMinPrice() {
+    public String getMinPrice() {
         return minPrice;
     }
 
-    public void setMinPrice(Integer minPrice) {
+    public void setMinPrice(String minPrice) {
         this.minPrice = minPrice;
     }
 
-    public Integer getMaxPrice() {
+    public String getMaxPrice() {
         return maxPrice;
     }
 
-    public void setMaxPrice(Integer maxPrice) {
+    public void setMaxPrice(String maxPrice) {
         this.maxPrice = maxPrice;
     }
 
@@ -56,19 +56,19 @@ public class CriteriaFormBean {
         this.productOnPage = productOnPage;
     }
 
-    public Double getMinWeight() {
+    public String getMinWeight() {
         return minWeight;
     }
 
-    public void setMinWeight(Double minWeight) {
+    public void setMinWeight(String minWeight) {
         this.minWeight = minWeight;
     }
 
-    public Double getMaxWeight() {
+    public String getMaxWeight() {
         return maxWeight;
     }
 
-    public void setMaxWeight(Double maxWeight) {
+    public void setMaxWeight(String maxWeight) {
         this.maxWeight = maxWeight;
     }
 
