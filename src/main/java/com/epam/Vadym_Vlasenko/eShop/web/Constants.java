@@ -40,5 +40,4 @@ public class Constants {
     public static final String CAPTCHA_HANDLER = "captchaHandler";
     public static final String CURRENT_CAPTCHA_VALUE = "captcha";
 
-
 }

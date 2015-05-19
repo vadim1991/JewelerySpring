@@ -24,7 +24,7 @@ import java.util.Date;
  */
 @Controller
 @WebServlet("/registration")
-@MultipartConfig(location = "f:\\Git\\Jewelry\\src\\main\\webapp\\images\\avatar\\", fileSizeThreshold = 1024 * 1024, maxFileSize = 1024 * 1024 * 10)
+@MultipartConfig(location = "c:\\JewelerySpring\\src\\main\\webapp\\images\\avatar\\", fileSizeThreshold = 1024 * 1024, maxFileSize = 1024 * 1024 * 10)
 public class RegistrationServlet extends HttpServlet {
 
     private static final String USER_ATTRIBUTE = "user";
@@ -41,8 +41,6 @@ public class RegistrationServlet extends HttpServlet {
         context = WebApplicationContextUtils.getWebApplicationContext(getServletContext());
         userService = (IUserService) context.getBean("userService");
         captchaHandler = (ICaptchaHandler) context.getBean("captchaHandler");
-        //userService = (UserService) context.getAttribute(Constants.USER_SERVICE);
-        //captchaHandler = (ICaptchaHandler) context.getAttribute((Constants.CAPTCHA_HANDLER));
     }
 
     @Override

@@ -1,6 +1,5 @@
-package com.epam.Vadym_Vlasenko.eShop.db.dao.mysql;
+package com.epam.Vadym_Vlasenko.eShop.db.dao.product;
 
-import com.epam.Vadym_Vlasenko.eShop.db.dao.IProductDAO;
 import com.epam.Vadym_Vlasenko.eShop.db.generic_dao.GenericHibernateDaoImpl;
 import com.epam.Vadym_Vlasenko.eShop.entity.CriteriaFormBean;
 import com.epam.Vadym_Vlasenko.eShop.entity.Product;
@@ -19,7 +18,7 @@ import java.util.List;
  * Created by Вадим on 22.03.2015.
  */
 @Repository("productDao")
-public class ProductDaoMySQL extends GenericHibernateDaoImpl<Product> implements IProductDAO<Product> {
+public class ProductDao extends GenericHibernateDaoImpl<Product> implements IProductDAO<Product> {
 
     private static final String CATEGORY_FIELD = "category";
     private static final String PRICE_FIELD = "price";
@@ -28,7 +27,7 @@ public class ProductDaoMySQL extends GenericHibernateDaoImpl<Product> implements
     private static final String WEIGHT_FIELD = "weight";
     private static final String SORT_FIELD = "sortType";
 
-    public ProductDaoMySQL() {
+    public ProductDao() {
         setClass(Product.class);
     }
 
@@ -49,11 +48,13 @@ public class ProductDaoMySQL extends GenericHibernateDaoImpl<Product> implements
         Criteria criteria = getCriteriaFromBean(criteriaFormBean);
         System.out.println(criteria.toString());
         List<Product> products = criteria.list();
-        Long amountProduct = (Long) criteria.setProjection(Projections.rowCount()).uniqueResult();
+        criteria.setFirstResult(0);
+        criteria.setProjection(Projections.rowCount());
+        Long amountProduct = (Long) criteria.uniqueResult();
         System.out.println(amountProduct);
         System.out.println(products);
         if (amountProduct == null) {
-            amountProduct = Long.valueOf(0);
+            amountProduct = Long.valueOf(1);
         }
         return new CriteriaResultBean(amountProduct, products);
     }
@@ -76,7 +77,7 @@ public class ProductDaoMySQL extends GenericHibernateDaoImpl<Product> implements
         }
         if (criteriaFormBean.getMaxWeight() != null || criteriaFormBean.getMinWeight() != null) {
             double minWeight = Double.parseDouble(criteriaFormBean.getMinWeight());
-            double maxWeight = Double.parseDouble(criteriaFormBean.getMinWeight());
+            double maxWeight = Double.parseDouble(criteriaFormBean.getMaxWeight());
             criteria.add(Restrictions.between(WEIGHT_FIELD, minWeight, maxWeight));
         }
         if (insertId != null) {
@@ -90,8 +91,8 @@ public class ProductDaoMySQL extends GenericHibernateDaoImpl<Product> implements
         if (criteriaFormBean.getSortType() != null) {
             criteria.addOrder(chooseSortType(criteriaFormBean.getSortType()));
         }
-        criteria.setMaxResults(criteriaFormBean.getProductOnPage());
         criteria.setFirstResult(criteriaFormBean.getPositionFrom());
+        criteria.setMaxResults(criteriaFormBean.getProductOnPage());
         return criteria;
     }
 

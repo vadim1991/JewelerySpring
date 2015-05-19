@@ -13,6 +13,8 @@ import java.io.Serializable;
 @Table(name = "inserts")
 public class Insert implements Serializable {
 
+    @Id
+    @GeneratedValue
     private int id;
     private String title;
 
@@ -23,8 +25,6 @@ public class Insert implements Serializable {
         this.title = title;
     }
 
-    @Id
-    @GeneratedValue
     public int getId() {
         return id;
     }

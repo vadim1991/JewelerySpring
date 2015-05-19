@@ -65,7 +65,7 @@ public class EarringsServlet extends HttpServlet {
         if (pageValue != null) {
             page = Integer.parseInt(pageValue);
         }
-        CriteriaFormBean criteria = getCriteria(req, resp);
+        CriteriaFormBean criteria = getCriteria(req);
         criteria.setPositionFrom((page - 1) * records);
         criteria.setProductOnPage(records);
         CriteriaResultBean criteriaResultBean = productService.getProductsByCriteria(criteria);
@@ -80,10 +80,11 @@ public class EarringsServlet extends HttpServlet {
         object.addProperty(PRODUCT_ON_PAGE_PARAMETER, noOfPages);
         object.addProperty(CURRENT_PAGE_ATTRIBUTE, page);
         object.add(EARRINGS_ATTRIBUTE, gson.toJsonTree(products));
+        System.out.println(gson.toJson(object));
         resp.getWriter().write(gson.toJson(object));
     }
 
-    private CriteriaFormBean getCriteria(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    private CriteriaFormBean getCriteria(HttpServletRequest req) throws ServletException, IOException {
         CriteriaFormBean criteria = new CriteriaFormBean();
         criteria.setIdCategory(Constants.EARRINGS_CATEGORY);
         criteria.setSortType(req.getParameter(SORT_TYPE_PARAMETER));

@@ -1,34 +1,40 @@
 package com.epam.Vadym_Vlasenko.eShop.entity;
 
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by swift-seeker-89717 on 16.04.2015.
  */
+@Entity
+@Table(name = "orders")
 public class Order implements Serializable {
 
+    @Id
+    @GeneratedValue
     private int id;
+    @ManyToOne
     private OrderStatus orderStatus;
     private String orderInfo;
+    @ManyToOne
     private User user;
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<OrderInfo> orderInfoList;
     private Date date;
-    private String telephone;
-    private String paymentInfo;
     private int totalPrice;
 
     public Order() {
         this.date = new Date();
     }
 
-    public Order(int id, OrderStatus orderStatus, String orderInfo, User user, String telephone, String paymentInfo, int totalPrice) {
-        this.id = id;
+    public Order(OrderStatus orderStatus, String orderInfo, User user, List orderInfoSet, int totalPrice) {
         this.orderStatus = orderStatus;
         this.orderInfo = orderInfo;
         this.user = user;
+        this.orderInfoList = orderInfoSet;
         this.date = new Date();
-        this.telephone = telephone;
-        this.paymentInfo = paymentInfo;
         this.totalPrice = totalPrice;
     }
 
@@ -72,28 +78,20 @@ public class Order implements Serializable {
         this.date = date;
     }
 
-    public String getTelephone() {
-        return telephone;
-    }
-
-    public void setTelephone(String telephone) {
-        this.telephone = telephone;
-    }
-
-    public String getPaymentInfo() {
-        return paymentInfo;
-    }
-
-    public void setPaymentInfo(String paymentInfo) {
-        this.paymentInfo = paymentInfo;
-    }
-
     public int getTotalPrice() {
         return totalPrice;
     }
 
     public void setTotalPrice(int totalPrice) {
         this.totalPrice = totalPrice;
+    }
+
+    public List<OrderInfo> getOrderInfoList() {
+        return orderInfoList;
+    }
+
+    public void setOrderInfoList(List<OrderInfo> orderInfoList) {
+        this.orderInfoList = orderInfoList;
     }
 
     @Override
@@ -104,12 +102,12 @@ public class Order implements Serializable {
         Order order = (Order) o;
 
         if (id != order.id) return false;
+        if (totalPrice != order.totalPrice) return false;
         if (orderStatus != null ? !orderStatus.equals(order.orderStatus) : order.orderStatus != null) return false;
         if (orderInfo != null ? !orderInfo.equals(order.orderInfo) : order.orderInfo != null) return false;
         if (user != null ? !user.equals(order.user) : order.user != null) return false;
-        if (date != null ? !date.equals(order.date) : order.date != null) return false;
-        if (telephone != null ? !telephone.equals(order.telephone) : order.telephone != null) return false;
-        return !(paymentInfo != null ? !paymentInfo.equals(order.paymentInfo) : order.paymentInfo != null);
+        if (orderInfoList != null ? !orderInfoList.equals(order.orderInfoList) : order.orderInfoList != null) return false;
+        return !(date != null ? !date.equals(order.date) : order.date != null);
 
     }
 
@@ -119,9 +117,9 @@ public class Order implements Serializable {
         result = 31 * result + (orderStatus != null ? orderStatus.hashCode() : 0);
         result = 31 * result + (orderInfo != null ? orderInfo.hashCode() : 0);
         result = 31 * result + (user != null ? user.hashCode() : 0);
+        result = 31 * result + (orderInfoList != null ? orderInfoList.hashCode() : 0);
         result = 31 * result + (date != null ? date.hashCode() : 0);
-        result = 31 * result + (telephone != null ? telephone.hashCode() : 0);
-        result = 31 * result + (paymentInfo != null ? paymentInfo.hashCode() : 0);
+        result = 31 * result + totalPrice;
         return result;
     }
 
@@ -132,9 +130,8 @@ public class Order implements Serializable {
                 ", orderStatus=" + orderStatus +
                 ", orderInfo='" + orderInfo + '\'' +
                 ", user=" + user +
+                ", orderInfoSet=" + orderInfoList +
                 ", date=" + date +
-                ", telephone='" + telephone + '\'' +
-                ", paymentInfo='" + paymentInfo + '\'' +
                 ", totalPrice=" + totalPrice +
                 '}';
     }

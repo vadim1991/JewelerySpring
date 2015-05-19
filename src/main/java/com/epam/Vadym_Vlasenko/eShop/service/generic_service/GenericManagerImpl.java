@@ -14,6 +14,7 @@ public class GenericManagerImpl<T, D extends GenericHibernateDao<T>> implements
         this.dao = (D) dao;
     }
 
+    @Transactional
     @Override
     public T findById(int id) {
         return dao.findById(id);
@@ -25,16 +26,19 @@ public class GenericManagerImpl<T, D extends GenericHibernateDao<T>> implements
         return dao.findAll();
     }
 
+    @Transactional
     @Override
     public void save(T entity) {
         dao.save(entity);
     }
 
+    @Transactional
     @Override
     public void update(T entity) {
         dao.update(entity);
     }
 
+    @Transactional
     @Override
     public void delete(T entity) {
         dao.delete(entity);

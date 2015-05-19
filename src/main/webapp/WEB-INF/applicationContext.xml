@@ -9,13 +9,6 @@
             http://www.springframework.org/schema/context
             http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="connectionHolder" class="com.epam.Vadym_Vlasenko.eShop.db.DBConnectionHolder">
-    </bean>
-
-    <bean id="transactionManagerService" class="com.epam.Vadym_Vlasenko.eShop.service.transaction.TransactionManager">
-        <property name="dbConnection" ref="connectionHolder"></property>
-    </bean>
-
     <bean id="captchaMap" class="java.util.concurrent.ConcurrentHashMap"/>
     <bean id="captchaHandler" class="com.epam.Vadym_Vlasenko.eShop.service.captcha.SessionCaptchaHandler"/>
     <bean id="localeHolder" class="com.epam.Vadym_Vlasenko.eShop.web.localization.SessionLocaleHolder"/>

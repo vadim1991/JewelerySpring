@@ -10,16 +10,26 @@ import java.util.Date;
 @Entity
 @Table(name = "users")
 public class User implements Serializable {
+
+    @Id
+    @GeneratedValue
     private int id;
+    @OneToOne(cascade=CascadeType.ALL)
     private Image image;
     private String name;
     private String surname;
+    @Column(name = "login",nullable = false,unique = true)
     private String login;
+    @Column(name = "password",nullable = false)
     private String password;
     private String email;
     private int age;
+    @ManyToOne
+    @JoinColumn(name = "role")
     private Role role;
     private Date lastLoginDate;
+
+    @Column(name = "unblockTime")
     private Date unblockedDate;
     private int loginFailAmount;
 
@@ -37,8 +47,6 @@ public class User implements Serializable {
         this.image = image;
     }
 
-    @Id
-    @GeneratedValue
     public int getId() {
         return id;
     }
@@ -63,7 +71,6 @@ public class User implements Serializable {
         this.surname = surname;
     }
 
-    @Column(name = "login",nullable = false,unique = true)
     public String getLogin() {
         return login;
     }
@@ -72,7 +79,6 @@ public class User implements Serializable {
         this.login = login;
     }
 
-    @Column(name = "password",nullable = false)
     public String getPassword() {
         return password;
     }
@@ -97,8 +103,6 @@ public class User implements Serializable {
         this.age = age;
     }
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "role")
     public Role getRole() {
         return role;
     }
@@ -115,7 +119,6 @@ public class User implements Serializable {
         this.lastLoginDate = lastLoginDate;
     }
 
-    @Column(name = "unblockTime")
     public Date getUnblockedDate() {
         return unblockedDate;
     }
@@ -132,7 +135,6 @@ public class User implements Serializable {
         this.loginFailAmount = loginFailAmount;
     }
 
-    @OneToOne(cascade = CascadeType.ALL)
     public Image getImage() {
         return image;
     }

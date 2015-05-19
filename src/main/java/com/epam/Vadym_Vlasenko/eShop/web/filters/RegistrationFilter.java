@@ -57,8 +57,6 @@ public class RegistrationFilter implements Filter {
         context = WebApplicationContextUtils.getWebApplicationContext(config.getServletContext());
         captchaHandler = (ICaptchaHandler) context.getBean("captchaHandler");
         userService = (IUserService) context.getBean("userService");
-        //userService = (UserService) context.getAttribute(Constants.USER_SERVICE);
-        //captchaHandler = (ICaptchaHandler) context.getAttribute(Constants.CAPTCHA_HANDLER);
     }
 
     @Override

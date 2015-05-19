@@ -1,14 +1,13 @@
 package com.epam.Vadym_Vlasenko.eShop.web.servlets;
 
 import com.epam.Vadym_Vlasenko.eShop.entity.User;
-import com.epam.Vadym_Vlasenko.eShop.service.User.UserService;
+import com.epam.Vadym_Vlasenko.eShop.service.User.IUserService;
 import com.epam.Vadym_Vlasenko.eShop.web.Constants;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
-import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -44,14 +43,13 @@ public class LoginServlet extends HttpServlet {
 
     private static final String USER_IS_ENTER_MESSAGE = "User sing up with login - ";
 
-    private UserService userService;
+    private IUserService userService;
     private WebApplicationContext context;
 
     @Override
     public void init() throws ServletException {
         context = WebApplicationContextUtils.getWebApplicationContext(getServletContext());
-        userService = (UserService) context.getBean("userService");
-        //userService = (UserService) context.getAttribute(Constants.USER_SERVICE);
+        userService = (IUserService) context.getBean("userService");
     }
 
     @Override

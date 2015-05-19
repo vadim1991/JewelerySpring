@@ -10,9 +10,11 @@
 <head>
     <title></title>
 </head>
-<body>
-<form action="/rings" method="post">
-    <input type="submit" value="ok">
-</form>
+<jsp:include page="menu.jsp"></jsp:include>
+<select>
+</select>
 </body>
+<script>
+    alert(document.location.href+"?lang=en");
+</script>
 </html>

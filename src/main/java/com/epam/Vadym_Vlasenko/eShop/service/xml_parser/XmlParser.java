@@ -1,6 +1,7 @@
 package com.epam.Vadym_Vlasenko.eShop.service.xml_parser;
 
 import com.epam.Vadym_Vlasenko.eShop.entity.Role;
+import org.springframework.stereotype.Component;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -17,15 +18,11 @@ import java.util.*;
 /**
  * Created by swift-seeker-89717 on 21.04.2015.
  */
-public class XmlParser {
+public class XmlParser implements IXmlParser {
 
     private static final String NODE_LIST = "constraint";
     private static final String URL_PATTERN = "url-pattern";
     private static final String ROLE = "role";
-
-    public XmlParser() {
-
-    }
 
     public Map<String, List<Role>> parseXml(String fileName) throws ParserConfigurationException, IOException, SAXException {
         Map<String, List<Role>> roleMap = new LinkedHashMap<>();

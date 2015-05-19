@@ -4,16 +4,11 @@ import com.epam.Vadym_Vlasenko.eShop.entity.Order;
 import com.epam.Vadym_Vlasenko.eShop.entity.OrderInfo;
 import com.epam.Vadym_Vlasenko.eShop.entity.User;
 import com.epam.Vadym_Vlasenko.eShop.service.json.IJsonService;
-import com.epam.Vadym_Vlasenko.eShop.service.json.JsonService;
 import com.epam.Vadym_Vlasenko.eShop.service.order.IOrderService;
-import com.epam.Vadym_Vlasenko.eShop.web.Constants;
-import com.google.gson.JsonObject;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
-import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -43,8 +38,6 @@ public class OrdersHistory extends HttpServlet {
         context = WebApplicationContextUtils.getWebApplicationContext(getServletContext());
         orderService = (IOrderService) context.getBean("orderService");
         jsonService = (IJsonService) context.getBean("jsonService");
-        //orderService = (IOrderService) getServletContext().getAttribute(Constants.ORDER_SERVICE);
-        //jsonService = new JsonService();
     }
 
     @Override
@@ -52,9 +45,9 @@ public class OrdersHistory extends HttpServlet {
         HttpSession session = req.getSession();
         User user = (User) session.getAttribute(USER_ATTRIBUTE);
         if (user != null) {
-            Map<Order, List<OrderInfo>> orderListMap = orderService.getOrdersWithInfo(user.getId());
-            if (orderListMap != null) {
-                String jsonMap = jsonService.orderMapToJSON(orderListMap);
+            List<Order> orderList = orderService.getOrdersByUser(user.getId());
+            if (orderList != null) {
+                String jsonMap = jsonService.ordersToJSON(orderList);
                 resp.getWriter().write(jsonMap);
             }
         }

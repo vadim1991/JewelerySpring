@@ -16,12 +16,6 @@ public class Captcha implements Serializable {
     public Captcha() {
     }
 
-    public Captcha(String content, UUID uuid, Date dateCreated) {
-        this.content = content;
-        this.uuid = uuid;
-        this.dateCreated = dateCreated;
-    }
-
     public String getContent() {
         return content;
     }

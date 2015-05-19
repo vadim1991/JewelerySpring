@@ -23,11 +23,11 @@ public class JsonService implements IJsonService {
     }
 
     @Override
-    public String orderMapToJSON(Map<Order, List<OrderInfo>> orderListMap) {
+    public String ordersToJSON(List<Order> orderList) {
         JsonObject jsonObject = new JsonObject();
         JsonArray array = new JsonArray();
-        for (Map.Entry entry : orderListMap.entrySet()) {
-            array.add(orderListToJSON((Order) entry.getKey(), (List<OrderInfo>) entry.getValue()));
+        for (Order order : orderList) {
+            array.add(orderListToJSON(order, order.getOrderInfoList()));
         }
         jsonObject.add("orders", array);
         return gson.toJson(jsonObject);

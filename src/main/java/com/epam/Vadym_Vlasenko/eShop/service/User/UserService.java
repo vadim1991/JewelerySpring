@@ -1,6 +1,6 @@
 package com.epam.Vadym_Vlasenko.eShop.service.User;
 
-import com.epam.Vadym_Vlasenko.eShop.db.dao.mysql.UserDaoMySQL;
+import com.epam.Vadym_Vlasenko.eShop.db.dao.user.UserDao;
 import com.epam.Vadym_Vlasenko.eShop.db.generic_dao.GenericHibernateDao;
 import com.epam.Vadym_Vlasenko.eShop.entity.User;
 import com.epam.Vadym_Vlasenko.eShop.service.generic_service.GenericManagerImpl;
@@ -14,7 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
  * Created by swift-seeker-89717 on 09.04.2015.
  */
 @Service("userService")
-public class UserService extends GenericManagerImpl<User, UserDaoMySQL> implements IUserService<User> {
+public class UserService extends GenericManagerImpl<User, UserDao> implements IUserService<User> {
 
     private static final Logger LOG = Logger.getLogger(UserService.class);
 

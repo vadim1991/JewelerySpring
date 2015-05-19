@@ -13,6 +13,8 @@ import java.io.Serializable;
 @Table(name = "image")
 public class Image implements Serializable {
 
+    @Id
+    @GeneratedValue
     private int id;
     private String title;
     private String url;
@@ -26,8 +28,6 @@ public class Image implements Serializable {
         this.url = url;
     }
 
-    @Id
-    @GeneratedValue
     public int getId() {
         return id;
     }

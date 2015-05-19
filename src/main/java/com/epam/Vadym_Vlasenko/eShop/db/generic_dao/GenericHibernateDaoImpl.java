@@ -3,7 +3,6 @@ package com.epam.Vadym_Vlasenko.eShop.db.generic_dao;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 
@@ -30,18 +29,13 @@ public class GenericHibernateDaoImpl<T extends Serializable> implements
     @SuppressWarnings("unchecked")
     @Override
     public T findById(int id) {
-        Transaction tx = getCurrentSession().getTransaction();
-        tx.begin();
-        T entity = (T) getCurrentSession().get(clazz, id);
-        tx.commit();
-        return entity;
+        return (T) getCurrentSession().get(clazz, id);
     }
 
     @SuppressWarnings("unchecked")
     @Override
     public List<T> findAll() {
-        List<T> list = (List<T>) getCurrentSession().createQuery("FROM " + clazz.getName()).list();
-        return list;
+        return (List<T>) getCurrentSession().createQuery("FROM " + clazz.getName()).list();
     }
 
     @Override
@@ -51,10 +45,7 @@ public class GenericHibernateDaoImpl<T extends Serializable> implements
 
     @Override
     public void save(T entity) {
-        Transaction tx = getCurrentSession().getTransaction();
-        tx.begin();
         getCurrentSession().saveOrUpdate(entity);
-        tx.commit();
     }
 
     @Override

@@ -3,15 +3,10 @@ package com.epam.Vadym_Vlasenko.eShop.web.servlets;
 import com.epam.Vadym_Vlasenko.eShop.entity.*;
 import com.epam.Vadym_Vlasenko.eShop.service.cart.CartService;
 import com.epam.Vadym_Vlasenko.eShop.service.order.IOrderService;
-import com.epam.Vadym_Vlasenko.eShop.service.product.IProductService;
 import com.epam.Vadym_Vlasenko.eShop.web.Constants;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
-import javax.servlet.ServletConfig;
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -42,7 +37,6 @@ public class OrderServlet extends HttpServlet {
     public void init() throws ServletException {
         context = WebApplicationContextUtils.getWebApplicationContext(getServletContext());
         orderService = (IOrderService) context.getBean("orderService");
-        //orderService = (IOrderService) context.getAttribute(Constants.ORDER_SERVICE);
     }
 
     @Override
@@ -60,7 +54,8 @@ public class OrderServlet extends HttpServlet {
             User user = (User) session.getAttribute(USER_ATTRIBUTE);
             Order order = makeOrder(user, cartService);
             List<OrderInfo> orderInfoList = makeOrderInfoList(cartService);
-            orderService.create(order, orderInfoList);
+            order.setOrderInfoList(orderInfoList);
+            orderService.save(order);
             session.removeAttribute(AMOUNT_PARAMETER);
             cartService.clearCart();
             return;

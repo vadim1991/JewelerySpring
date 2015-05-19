@@ -4,6 +4,7 @@ import com.epam.Vadym_Vlasenko.eShop.entity.Role;
 import com.epam.Vadym_Vlasenko.eShop.entity.User;
 import com.epam.Vadym_Vlasenko.eShop.service.xml_parser.XmlParser;
 import org.apache.log4j.Logger;
+import org.springframework.stereotype.Service;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -16,7 +17,7 @@ import java.util.regex.Pattern;
 /**
  * Created by swift-seeker-89717 on 21.04.2015.
  */
-public class SecurityService {
+public class SecurityService implements ISecurityService {
 
     private static final Logger LOG = Logger.getLogger(SecurityService.class);
 
@@ -32,11 +33,7 @@ public class SecurityService {
         Map<String, List<Role>> roleMap = null;
         try {
             roleMap = xmlParser.parseXml(fileName);
-        } catch (ParserConfigurationException e) {
-            LOG.error(e);
-        } catch (IOException e) {
-            LOG.error(e);
-        } catch (SAXException e) {
+        } catch (ParserConfigurationException | IOException | SAXException e) {
             LOG.error(e);
         }
         return roleMap;
@@ -46,11 +43,7 @@ public class SecurityService {
         Map<String, List<Role>> roleMap = null;
         try {
             roleMap = xmlParser.parseXml(fileName);
-        } catch (ParserConfigurationException e) {
-            LOG.error(e);
-        } catch (IOException e) {
-            LOG.error(e);
-        } catch (SAXException e) {
+        } catch (ParserConfigurationException | IOException | SAXException e) {
             LOG.error(e);
         }
         Role role = user.getRole();

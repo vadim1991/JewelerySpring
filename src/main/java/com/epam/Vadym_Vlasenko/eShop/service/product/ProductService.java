@@ -1,6 +1,6 @@
 package com.epam.Vadym_Vlasenko.eShop.service.product;
 
-import com.epam.Vadym_Vlasenko.eShop.db.dao.mysql.ProductDaoMySQL;
+import com.epam.Vadym_Vlasenko.eShop.db.dao.product.ProductDao;
 import com.epam.Vadym_Vlasenko.eShop.db.generic_dao.GenericHibernateDao;
 import com.epam.Vadym_Vlasenko.eShop.entity.CriteriaFormBean;
 import com.epam.Vadym_Vlasenko.eShop.entity.Product;
@@ -15,7 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
  * Created by Вадим on 22.03.2015.
  */
 @Service("productService")
-public class ProductService extends GenericManagerImpl<Product,ProductDaoMySQL> implements IProductService<Product> {
+public class ProductService extends GenericManagerImpl<Product, ProductDao> implements IProductService<Product> {
 
     @Autowired
     @Qualifier("productDao")

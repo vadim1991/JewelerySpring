@@ -1,25 +1,24 @@
 package com.epam.Vadym_Vlasenko.eShop.entity;
 
+import javax.persistence.*;
 import java.io.Serializable;
 
 /**
  * Created by swift-seeker-89717 on 16.04.2015.
  */
+@Entity
+@Table(name = "order_info")
 public class OrderInfo implements Serializable {
 
+    @Id
+    @GeneratedValue
     private int id;
+    @ManyToOne
     private Product product;
     private int price;
     private int amount;
 
     public OrderInfo() {
-    }
-
-    public OrderInfo(int id, Product product, int price, int amount) {
-        this.id = id;
-        this.product = product;
-        this.price = price;
-        this.amount = amount;
     }
 
     public int getId() {

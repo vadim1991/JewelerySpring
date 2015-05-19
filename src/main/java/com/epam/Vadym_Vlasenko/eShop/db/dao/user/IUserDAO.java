@@ -1,4 +1,4 @@
-package com.epam.Vadym_Vlasenko.eShop.db.dao;
+package com.epam.Vadym_Vlasenko.eShop.db.dao.user;
 
 import com.epam.Vadym_Vlasenko.eShop.db.generic_dao.GenericHibernateDao;
 import com.epam.Vadym_Vlasenko.eShop.entity.User;

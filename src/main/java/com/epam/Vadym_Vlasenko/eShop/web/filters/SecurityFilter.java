@@ -4,6 +4,8 @@ import com.epam.Vadym_Vlasenko.eShop.entity.Role;
 import com.epam.Vadym_Vlasenko.eShop.entity.User;
 import com.epam.Vadym_Vlasenko.eShop.service.security_service.SecurityService;
 import com.epam.Vadym_Vlasenko.eShop.web.Constants;
+import org.springframework.web.context.WebApplicationContext;
+import org.springframework.web.context.support.WebApplicationContextUtils;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
@@ -16,7 +18,7 @@ import java.util.Map;
 /**
  * Created by swift-seeker-89717 on 21.04.2015.
  */
-
+@WebFilter(urlPatterns = "/*")
 public class SecurityFilter implements Filter {
 
     private static final String USER_ATTRIBUTE = "user";
@@ -24,10 +26,14 @@ public class SecurityFilter implements Filter {
 
     private SecurityService securityService;
     private Map<String, List<Role>> securityMap;
+    private WebApplicationContext context;
 
     @Override
-    public void init(FilterConfig filterConfig) throws ServletException {
-        securityService = (SecurityService) filterConfig.getServletContext().getAttribute(Constants.SECURITY_SERVICE);
+    public void init(FilterConfig config) throws ServletException {
+        context = WebApplicationContextUtils.getWebApplicationContext(config.getServletContext());
+        String configParamXml = context.getServletContext().getInitParameter(Constants.XML_SECURITY);
+        String securityFileName = context.getServletContext().getRealPath(configParamXml);
+        securityService = new SecurityService(securityFileName);
         securityMap = securityService.getMapFromXml();
     }
 
